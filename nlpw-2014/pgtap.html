@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Database Unit Testing with PgTAP (NLPW 2014)</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="database unit testing with pgtap" />
+		<meta name="keywords" content="postgres testing perl pgtap" />
+		<meta name="author" content="Su-Shee" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div id="about" class="content">
+			<h2>About Su-Shee</h2>
+			<p>political scientist by education</p>
+        <br />
+      <p>one of those early Web &amp; Linux chicks since '94</p>
+        <br />
+			<p>hacking Perl mostly in companies since... CGI.pm ;)</p>
+        <br />
+			<p>doing lots of Open Source writing e.g. c't, Ix, Heise Open</p>
+        <br />
+      <p>♥s Postgres, Perl, some Perl6, Shell, C, Smalltalk and R</p>
+        <br />
+      <p>has a thing for "simple", "has no features", "bare minimum", "who needs that?!"</p>
+        <br />
+      <p>GitHub: <a href="https://github.com/Su-Shee">Su-Shee</a></p>
+      <p>Twitter: <a href="https://twitter.com/sheeshee">@sheeshee</a></p>
+		</div>
+
+		<div id="pgtap" class="panel">
+			<div class="content">
+				<h2>PgTAP DB Unit Tests</h2>
+        <p><a href="http://pgtap.org">http://pgtap.org</a></p>
+				<p>Written by David "theory" Wheeler</p>
+        <p>for MySQL, too!</p>
+          <br />
+        <p>"pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and PL/SQL. It includes a comprehensive collection of TAP-emitting assertion functions, as well as the ability to integrate with other TAP-emitting test frameworks. It can also be used in the xUnit testing style."</p>
+          <br />
+				<p>easily installed via "create extension pgtap"</p>
+				<p>very well documented</p>
+          <br />
+				<p>runs with "pg_prove" (CPAN) or "in database"</p>
+			</div>
+		</div>
+
+		<div id="perl" class="panel">
+			<div class="content">
+				<h2>Lovely Perl Tests</h2>
+				<p>"cheap", simple, easy to learn, fast to whip up, straight forward</p>
+        <p>ok, is, isnt, like, unlike - you can do a lot of testing with the basics!</p>
+				<p>on every level and layer you can imagine</p>
+				<p>from the top like Test::WWW::Selenium...</p>
+				<p>...down to the bottom via e.g. DBIC testing</p>
+        <p>and everywhere in between!</p>
+        <br />
+        <br />
+      <p>PgTAP reflects that!</p>
+      <p>Also simple, easy to start with and "cheap"</p>
+      <p>...and yet you can run it completely standalone</p>
+      <p>put your database somewhere, add tests, run whenever, whatever language on top</p>
+			</div>
+		</div>
+
+		<div id="database" class="panel">
+			<div class="content">
+				<h2>Lots Of Things</h2>
+          <p>databases, schemata, roles, groups</p>
+          <br />
+          <p>tables and columns of course</p>
+          <br />
+          <p>types, checks, constraints</p>
+          <br />
+          <p>indexes, sequences, </p>
+          <br />
+          <p>views, triggers, functions</p>
+          <br />
+          <p>selects, inserts, updates</p>
+          <h1>and you can test it all!</h1>
+			</div>
+		</div>
+
+		<div id="havestuff" class="panel">
+			<div class="content">
+				<h2>Everything there?!</h2>
+<pre>
+<span class="line">CREATE TABLE cats ();</span>
+<span class="line">CREATE TABLE traits ();</span>
+<span class="line">CREATE ROLE catsitter LOGIN PASSWORD 'supersecure'</span>
+<span class="line">  VALID UNTIL '2014-04-26';</span>
+</pre>
+<br />
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(3);</span>
+<span class="line">SELECT has_table('cats');</span>
+<span class="line">SELECT has_table('traits');</span>
+<span class="line">SELECT tables_are('public', ARRAY['cats', 'traits']);</span>
+<span class="line">SELECT has_role('catsitter');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<br />
+<p>in a similar fashion:</p>
+<p>views_are(), sequences_are(), columns_are(),
+indexes_are() etc (triggers, functions, roles, languages, groups)
+</p>
+<p>
+has_schema, has_relation, has_view, has_sequence, has_trigger, has_whateveryoucanthinkof
+</p>
+			</div>
+		</div>
+
+		<div id="table" class="panel">
+			<div class="content">
+				<h2>Your Tables</h2>
+<pre>
+<span class="line">CREATE TABLE cats (</span>
+<span class="line">  id SERIAL PRIMARY KEY,</span>
+<span class="line">  breed TEXT NOT NULL,</span>
+<span class="line">  origin TEXT NOT NULL CHECK (LENGTH(origin) = 2),</span>
+<span class="line">  birthday DATE NOT NULL DEFAULT current_date</span>
+<span class="line">);</span>
+</pre>
+<br />
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(5);</span>
+<span class="line">SELECT has_table('cats');</span>
+<span class="line">SELECT has_pk('cats');</span>
+<span class="line">SELECT has_check('cats');</span>
+<span class="line">SELECT columns_are('cats',</span>
+<span class="line">  ARRAY['id', 'breed', 'origin', 'birthday']);</span>
+<span class="line">SELECT has_sequence('public', 'cats_id_seq', </span>
+<span class="line">  'Column id is serial and has a sequence');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<p>columns_are() fails nicely if there ARE columns you are NOT listing - has to be exact.</p>
+			</div>
+		</div>
+
+		<div id="column" class="panel">
+			<div class="content">
+				<h2>Tests On Columns</h2>
+<pre>
+<span class="line">CREATE TABLE cats (</span>
+<span class="line">  id SERIAL PRIMARY KEY</span>
+<span class="line">);</span>
+</pre>
+<br />
+<pre>
+<span class="line">CREATE TABLE traits (</span>
+<span class="line">  id SERIAL PRIMARY KEY,</span>
+<span class="line">  catid SERIAL REFERENCES cats (id)</span>
+<span class="line">);</span>
+</pre>
+<br />
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(5);</span>
+<span class="line">SELECT col_is_pk('cats', 'id');</span>
+<span class="line">SELECT col_not_null('cats', 'id');</span>
+<span class="line">SELECT col_type_is('cats', 'id', 'integer');</span>
+<span class="line">SELECT has_fk('traits');</span>
+<span class="line">SELECT col_is_fk('traits', 'catid');</span>
+<span class="line">SELECT fk_ok('traits', 'catid', 'cats', 'id');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<p>fk_ok() "...function combines col_is_fk() and col_is_pk() into a single test that also happens to determine that there is in fact a foreign key relationship between the foreign and primary key tables."</p>
+			</div>
+		</div>
+
+		<div id="checks" class="panel">
+			<div class="content">
+				<h2>Check For Things</h2>
+<pre>
+<span class="line">CREATE TABLE cats (</span>
+<span class="line">  origin TEXT NOT NULL CHECK (LENGTH(origin) = 2),</span>
+<span class="line">  birthday DATE NOT NULL DEFAULT current_date</span>
+<span class="line">);</span>
+</pre>
+<br />
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(5);</span>
+<span class="line">SELECT col_not_null('cats', 'origin');</span>
+<span class="line">SELECT col_type_is('cats', 'origin', 'text');</span>
+<span class="line">SELECT col_has_check('cats', 'origin');</span>
+<span class="line">SELECT col_has_default('cats', 'birthday');</span>
+<span class="line">SELECT col_default_is('cats', 'birthday', 'now()');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+			</div>
+		</div>
+
+		<div id="trigger" class="panel">
+			<div class="content">
+				<h2>Functions And Triggers</h2>
+<pre>
+<span class="line">CREATE FUNCTION my_timestamp () RETURNS trigger AS $timestamped$</span>
+<span class="line">  BEGIN</span>
+<span class="line">    NEW.updated := current_timestamp(1);</span>
+<span class="line">    RETURN NEW;</span>
+<span class="line">  END;</span>
+<span class="line">$timestamped$ LANGUAGE plpgsql;</span>
+<span class="line"> </span>
+<span class="line">CREATE TRIGGER updated BEFORE UPDATE ON traits</span>
+<span class="line">    FOR EACH ROW EXECUTE PROCEDURE my_timestamp ();</span>
+</pre>
+<br />
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(4);</span>
+<span class="line">SELECT has_function('my_timestamp');</span>
+<span class="line">SELECT function_lang_is('my_timestamp', 'plpgsql');</span>
+<span class="line">SELECT function_returns('my_timestamp', 'trigger');</span>
+<span class="line">SELECT trigger_is('traits', 'updated', 'my_timestamp');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+			</div>
+		</div>
+
+		<div id="insert" class="panel">
+			<div class="content">
+				<h2>Insert Stuff</h2>
+<pre>
+<span class="line">CREATE TABLE cats (</span>
+<span class="line">  origin TEXT NOT NULL CHECK (LENGTH(origin) = 2)</span>
+<span class="line">);</span>
+</pre>
+<br />
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(4);</span>
+<span class="line">SELECT lives_ok(</span>
+<span class="line">  'INSERT INTO</span>
+<span class="line">    cats (name, breed, origin)</span>
+<span class="line">  VALUES</span>
+<span class="line">    ($$Hissy$$, $$Siamese$$, $$TH$$);',</span>
+<span class="line">  'inserting a new cat should be ok'</span>
+<span class="line">);</span>
+<span class="line"></span>
+<span class="line">SELECT throws_ok(</span>
+<span class="line">  'INSERT INTO cats (name, breed, origin)</span>
+<span class="line">   VALUES ($$MaoMao$$, $$Ordinary Housecat$$, $$Germany$$);',</span>
+<span class="line">  'new row for relation "cats"</span>
+<span class="line">   violates check constraint "cats_origin_check"',</span>
+<span class="line">  'origin as country name should violate check constraint'</span>
+<span class="line">);</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+			</div>
+		</div>
+
+		<div id="select" class="panel">
+			<div class="content">
+				<h2>Testing Selects</h2>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(1);</span>
+<span class="line">PREPARE basic_select AS</span>
+<span class="line">  SELECT name, breed, origin</span>
+<span class="line">  FROM cats</span>
+<span class="line">  WHERE breed = 'Burmese';</span>
+<span class="line"></span>
+<span class="line">SELECT results_eq (</span>
+<span class="line">  'basic_select',</span>
+<span class="line">  $$VALUES('Kitty'::text, 'Burmese'::text, 'TH'::text)$$,</span>
+<span class="line">  'should select all cats of Burmese breed'</span>
+<span class="line">);</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<p>
+noteworthy: performs_ok test fails if a query takes longer than xx milliseconds
+</p>
+<p>
+... and lots of variations: set_eq (unordered, duplicates), bag_eq (unordered, duplicates match) is_empty... and of course their negatives.
+</p>
+			</div>
+		</div>
+		<div id="header">
+			<h1>PgTAP</h1>
+			<ul id="navigation">
+				<li><a id="link-about" href="#about">about</a></li>
+				<li><a id="link-pgtap" href="#pgtap">pgtap</a></li>
+				<li><a id="link-perl" href="#perl">perl testing</a></li>
+				<li><a id="link-database" href="#database">your database</a></li>
+				<li><a id="link-havestuff" href="#havestuff">all there?</a></li>
+				<li><a id="link-table" href="#table">table has</a></li>
+				<li><a id="link-column" href="#column">column is</a></li>
+				<li><a id="link-checks" href="#checks">checks</a></li>
+				<li><a id="link-trigger" href="#trigger">triggers</a></li>
+				<li><a id="link-insert" href="#insert">insert stuff</a></li>
+				<li><a id="link-select" href="#select">select all things</a></li>
+			</ul>
+		</div>
+
+	</body>
+</html>
