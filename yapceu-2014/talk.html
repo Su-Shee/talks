@@ -1,0 +1,545 @@
+<html>
+<head>
+  <title>Web Frameworks Talk (YAPC::EU 2014)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+   <script src="jquery.min.js"></script>
+   <script src="jqueryui/jquery-ui.min.js"></script>
+   <script type="text/javascript" src="jquery.fullPage.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+      $('#container').fullpage();
+  });
+</script>
+
+</head>
+<body>
+
+<div id="container">
+
+<div class='section'>
+<h1>Web Frameworks - A Love Hate Relationship</h1>
+</div>
+
+<div class='section'>
+<h1>god, we tried so many horrible things to make something good...</h1>
+</div>
+
+<div class='section'>
+<h1>... remember this?</h1>
+<p>the GIF patent discussion</p>
+<p>image maps</p>
+<p>SSI</p>
+<p>we used hidden fields A LOT</p>
+</div>
+
+<div class='section'>
+
+<h1>... or back when ...</h1>
+<p>somebody invented mod_perl</p>
+<p>the world put sessions in URLs</p>
+<p>we got PHP/FI and mSQL</p>
+</div>
+
+<div class='section'>
+
+<h1>... but suddenly ...</h1>
+<p>somebody thought XML was great</p>
+<p>we got CSS and the use of tables was frowned upon</p>
+<p>WE STOPPED WRITING HTML TAGS LIKE THIS</p>
+<p>everybody hated the use of JavaScript</p>
+</div>
+
+<div class='section'>
+
+<h1>and then this happened...</h1>
+<p>people loved JavaScript</p>
+<p>we got Rails and jQuery and Unicorns</p>
+<p>everything was pretty all of a sudden!</p>
+</div>
+
+<div class='section'>
+
+<h1>and all browsers got their shit together</h1>
+<p>we now have Web Three And A Half - CSS3 and HTML5</p>
+<p>
+btw. these slides require JavaScript because you can't pageDown a full
+screen because for old "reading text" usability reasons - you always get xx
+lines of the previous screen. I hate web. NO BOOK DOES THAT.
+</p>
+</div>
+
+<div class='section'>
+<h1>early frameworks in Perl</h1>
+<p>CGI.pm</p>
+<p>CGI::Application</p>
+<p>Mason</p>
+<p>Maypole</p>
+</div>
+
+<div class='section'>
+<h1>but - did websites change?</h1>
+<p>well, they're not called "homepage" anymore, Toto, not even in Kansas!</p>
+</div>
+
+<div class='section'>
+
+<h1>varieties</h1>
+<p>Enterprise Domain Specific Specialized Subscriber Only</p>
+<p>Social Foobar</p>
+<p>Little Every Day Company Page</p>
+<p>Shops</p>
+<p>S&Ouml;RVICES! err SERVICES!</p>
+<p>APIs</p>
+</div>
+
+<div class='section'>
+
+<h1>so everything got complicated like hell?</h1>
+<p>YES!</p>
+<p>Well.</p>
+<p>NO!</p>
+<p>but.. FRAMEWORKS!</p>
+<p>
+it still is HTTP, form handling, the infamous back button, faking
+"state" somehow, input validation, sessions, authenticate and authorize
+and now it all has to even look good and behave nicely!
+</p>
+</div>
+
+<div class='section'>
+
+<h1>so, what do we have today?</h1>
+<h3>kind of the mother of all modern frameworks</h3>
+<p>Ruby: Rails, Sinatra</p>
+<h3>and her derivatives</h3>
+<p>Python: Django, Flask</p>
+<p>Perl: Catalyst, Dancer, Mojolicious</p>
+<p>(not talking about old stuff anymore, really not!)</p>
+<p>JavaScript: Express, Meteor</p>
+</div>
+
+<div class='section'>
+
+<h1>and these...</h1>
+<p>Java: Well that's a league of its own</p>
+<p>PHP: that too</p>
+</div>
+
+<div class='section'>
+
+<h1>everybody has one these days!</h1>
+<img src="fritz.jpg"/>
+</div>
+
+<div class='section'>
+
+<h1>yes, everybody!</h1>
+<p>Smalltalk: Seaside, Illiad</p>
+<p>R: Shiny (not kidding, I'll show you)</p>
+<p>Haskell: Yesod</p>
+<p>Erlang: Web Machine</p>
+<p>COBOL: NOW WITH CGI SUPPORT!</p>
+</div>
+
+<div class='section'>
+
+<h1>how to categorize available frameworks?</h1>
+<h3>no, they're not all MVC - Routes - Templates - ORM combinations</h3>
+<h3>but let me show you</h3>
+</div>
+
+<div class='section'>
+<h1>we have 'tis amazing kitty application...</h1>
+<a href="http://localhost:5000">kitties served with flask</a>
+<br/>
+<br/>
+<a href="http://localhost:4567">kitties served with sinatra</a>
+<br/>
+<br/>
+<a href="http://localhost:3000">kitties served with dancer</a>
+<br/>
+<br/>
+<a href="http://localhost:3000">kitties served with mojolicious</a>
+<br/>
+</div>
+
+<div class='section'>
+
+<h1>which looks like this in...</h1>
+</div>
+
+<div class='section'>
+
+<h1>Python - Flask - Jinja</h1>
+<img src="flask-code.png"/>
+<img src="flask-template.png"/>
+</div>
+
+<div class='section'>
+
+<h1>Ruby - Sinatra - Slim</h1>
+<img src="sinatra-code.png"/>
+<img src="sinatra-template.png"/>
+</div>
+
+<div class='section'>
+
+<h1>Perl - Dancer - Template Toolkit</h1>
+<img src="dancer-code.png"/>
+<img src="dancer-template.png"/>
+</div>
+
+<div class='section'>
+
+<h1>Perl - Mojolicious - Mojo's Templates</h1>
+<img src="mojo-code.png"/>
+<img src="mojo-template.png"/>
+</div>
+
+<div class='section'>
+
+<h1>To let it really sit with you for a second:</h1>
+<img src="fritz-sit.jpg"/>
+</div>
+
+<div class='section'>
+
+<h1>routes:</h1>
+<h3>Flask</h3>
+<pre><span class="line">@app.route('/cats/<user>')</span></pre>
+<h3>Sinatra</h3>
+<pre><span class="line">get '/cats/:user' do</span></pre>
+<h3>Dancer:</h3>
+<pre><span class="line">get '/cats/:user' => sub {</span></pre>
+<h3>Mojolicious:</h3>
+<pre><span class="line">get '/cats/:user' => sub {</span></pre>
+</div>
+
+<div class='section'>
+
+<h1>your params:</h1>
+<h3>Flask</h3>
+<pre><span class="line">user = request.form['username']</span></pre>
+<h3>Sinatra</h3>
+<pre><span class="line">username = params[:user]</span></pre>
+<h3>Dancer</h3>
+<pre><span class="line">my $user = params->{'username'};</span></pre>
+<h3>Mojolicious</h3>
+<pre><span class="line">my $user = $c->param('user');</span></pre>
+
+</div>
+
+<div class='section'>
+
+<h1>templates:</h1>
+<h3>Jinja</h3>
+<pre><span class="line">&lt;h1&gt;here, {{ username }} have your kitteh!&lt;/h1&gt;</span></pre>
+<h3>Slim/Jade</h3>
+<pre><span class="line">h1 here, #{username} have your kitteh!</span></pre>
+<h3>Template Toolkit</h3>
+<pre><span class="line">&lt;h1&gt;here, [% username %] have your kitteh!&lt;/h1&gt;</span></pre>
+<h3>Mojo</h3>
+<pre><span class="line">&lt;h1&gt;here, &lt;%= $username %&gt; have your kitteh!&lt;/h1&gt;</span></pre>
+</div>
+
+<div class='section'>
+
+<h1>not really much of a difference, eh?</h1>
+</div>
+
+<div class='section'>
+
+<h1>the devil is in the details</h1>
+<p>what kind of helpers? any validation helpers?</p>
+<p>before, after rendering hooks?</p>
+<p>model integration/ORM?</p>
+<p>how to deal with sessions?</p>
+<p>does it have flash messages?</p>
+<p>authentication and authorization?</p>
+<p>does it have plugins or something similar?</p>
+<p>good documentation? lots of folklore, best practices, examples, real
+applications to take a look at?</p>
+</div>
+
+<div class='section'>
+
+<h1>So, anything else?</h1>
+<p>YES!</p>
+<p>two different way of thinking a web application</p>
+</div>
+
+<div class='section'>
+
+<h1>"loose"</h1>
+<p>service oriented</p>
+<p>steve yegge's amazon service rant</p>
+<p>"raw"/everything exposed</p>
+<p>high level of control over the entire request/response cycle</p>
+</div>
+
+
+<div class='section'>
+
+<h1>"tight"</h1>
+<p>highly integrated</p>
+<p>application oriented</p>
+<p>"like real GUI programming"</p>
+<p>oh god, please don't make me touch HTML/CSS</p>
+<p>components</p>
+<p>coming with everything out of the box</p>
+<p>why would I even bother with templates?!</p>
+</div>
+
+<div class='section'>
+
+<h1>"very raw, high level of control"</h1>
+
+<p>Erlang's "Web Machine" (also in Ruby, Perl, Node)</p>
+<p>Mongrel2 (ok, not really a web framework)</p>
+<p>back in the day: mod_perl (Yes!)</p>
+</div>
+
+<div class='section'>
+
+<h1>"like GUI, components, tightly integrated"</h1>
+<p>Smalltalk's Seaside</p>
+<p>R's Shiny (for the name alone.. :)</p>
+</div>
+
+<div class='section'>
+
+<h1>let's take a look:</h1>
+</div>
+
+<div class='section'>
+
+<h1>Web Machine:</h1>
+<p>the resource is "the thing" you have</p>
+<p>WOAH, state engine! see the insane diagram over at basho's</p>
+<a href="https://raw.githubusercontent.com/wiki/basho/webmachine/images/http-headers-status-v3.png">insane state diagram</a>
+<p>running through every step of request/response PER RESOURCE</p>
+<p>having 50 or so subs/functions exposing every step of the way (plus some
+helpers)</p>
+<a href="http://localhost:5000">kitties served by web machine</a>
+</div>
+
+<div class='section'>
+
+<h1>looks like this:</h1>
+<pre>
+<span class="line">sub allowed_methods { [qw[ GET POST ]] }</span>
+<span class="line">sub content_types_provided { [{ 'text/css' => 'to_css'},</span>
+<span class="line">                           {'text/html' => 'to_html' }] }</span>
+</pre>
+
+<h3>and you take care of the details</h3>
+
+<pre>
+<span class="line">sub process_post { ... }</span>
+<span class="line">sub to_html { ... }</span>
+<span class="line">sub to_css { ... }</span>
+</pre>
+</div>
+
+<div class='section'>
+
+<h1>a bit more of the example</h1>
+<img src="webmachine.png"/>
+</div>
+
+<div class='section'>
+
+<h1>advantages</h1>
+<p>very high control</p>
+<p>of RESTful buddha nature</p>
+<p>you can do with it whatever you want</p>
+<p>combine it with whatever you like</p>
+<p>#dammitstevan</p>
+</div>
+
+<div class='section'>
+
+<h1>caveats</h1>
+<p>you have to do everything yourself, by hand</p>
+<p>you better really know HTTP</p>
+<p>needs to be combined with other tools/modules</p>
+</div>
+
+<div class='section'>
+
+<h1>Mongrel2</h1>
+<p>not really a web framework, ok</p>
+<p>great concept: route pointing to a ZeroMQ handler!</p>
+<p>very service-ish</p>
+<p>sadly a bit weird, SQLite to store, config = python code</p>
+</div>
+
+<div class='section'>
+
+<h1>looks like this</h1>
+<pre>
+<span class="line">'/kittehz/': Handler(send_spec='tcp://127.0.0.1:9996',</span>
+<span class="line">                     send_ident='barbarbabar',</span>
+<span class="line">                     recv_spec='tcp://127.0.0.1:9999',</span>
+<span class="line">                     recv_ident='bazbazbaz')</span>
+</pre>
+</div>
+
+
+<div class='section'>
+
+<h1>when to use "loose"</h1>
+<p>great for APIs</p>
+<p>when you really REALLY want REST all the way</p>
+<p>when you hate everything else and roll your own</p>
+<p>because you can</p>
+</div>
+
+<div class='section'>
+
+<h1>Smalltalk Seaside</h1>
+<p>you program an application, a GUI, a "page", a component</p>
+<p>coolest shit feature EVAR: edit in client, updated automatically on server and
+the other way around</p>
+<a href="http://localhost:8080">kitties served by seaside</a>
+</div>
+
+<div class='section'>
+
+<h1>looks like this</h1>
+<img src="smalltalk.png"/>
+</div>
+
+<div class='section'>
+
+<h1>advantages</h1>
+<p>everything is an object and they REALLY mean it</p>
+<p>pretty cool language</p>
+<p>they invented everything anyways, why not use the orginal</p>
+<p>if you know Smalltalk (haha) and know GUI programming it's extremely productive</p>
+<p>never bother to touch HTML or CSS on your own (bah. tsk.)</p>
+<p>good argument: "99% of all websites are small, we don't need to scale"</p>
+</div>
+
+<div class='section'>
+
+<h1>caveats:</h1>
+<p>extremely alien if you come from the "regular" kinds of frameworks</p>
+<p>you better REALLY know OO</p>
+<p>so tightly intergrated to Smalltalk images - you can't even easily version it
+ghetto language problem (they do everything EVERYTHING their own way. Ok, they
+invented most ways, but..)</p>
+<p>so tightly integrated and so much magic that .. good luck if something doesn't
+work</p>
+<p>no folklore, no examples in the wild to take a look at</p>
+</div>
+
+<div class='section'>
+
+<h1>R's Shiny</h1>
+<p>reactive</p>
+<p>whip up reactive, interactive charts in minutes</p>
+<p>very short code, feels a bit declarative</p>
+<a href="http://localhost:3000">kitties served by shiny</a>
+</div>
+
+<div class='section'>
+
+<h1>looks like this</h1>
+<h3>server part</h3>
+
+<pre>
+<span class="line">shinyServer ( function (input, output) {</span>
+<span class="line"> output$caption <- renderText( {</span>
+<span class="line">    paste("here ", input$username, " have your kitteh!")</span>
+<span class="line">  } )</span>
+<span class="line">})</span>
+</pre>
+
+<h3>ui part</h3>
+<pre>
+<span class="line">shinyUI( pageWithSidebar(</span>
+<span class="line">  mainPanel(</span>
+<span class="line">    h3( textOutput("caption") ),</span>
+<span class="line">    imageOutput("catpic")</span>
+<span class="line">  )</span>
+<span class="line">))</span>
+</pre>
+
+</div>
+
+
+<div class='section'>
+
+<h1>advantages</h1>
+<p>R... *LOL* .. now that's is a thing.. wow :)</p>
+<p>most people know it as "statistic's thing"</p>
+<p>it's a statistics environment with a programming language behind (books usally
+have like 2 pages about "the language")</p>
+<p>you "use it" more than really "program it"</p>
+<p>really well done in terms of "serve this data"</p>
+<p>great examples</p>
+<p>R in general has very nice documentation</p>
+<p>"CRAN" (modules are called cranberries :)</p>
+</div>
+
+<div class='section'>
+
+<h1>caveat</h1>
+<p>do not look into the code as a developer. really don't</p>
+<p>magic behind it to the extreme.</p>
+<p>it's a total special interest thing - but at least extremely practical</p>
+</div>
+
+<div class='section'>
+
+<h1>when to use "tight"</h1>
+<p>productivity &amp; whipuptitude</p>
+<p>"I just want this little thing.."</p>
+<p>you hate templates</p>
+<p>"we have this big enterprise thing running for 15 years now.."</p>
+<p>because you can</p>
+</div>
+
+<div class='section'>
+
+<h1>other things to think about</h1>
+<p>almost all functional languages wrap HTML and CSS into their language, partially even JavaScript</p>
+<p>there's also the concept of CouchDB to just HTTP directly with your database -
+Tim Bunce has something vaguely related with DBIC/Web Machine: "WebAPI::DBIC"</p>
+<p>templates? really? why not have real widgets?</p>
+</div>
+
+<div class='section'>
+
+<h1>VERDICT</h1>
+<p>docs and tutorials: Flask - in particular "The Flask Mega Tutorial"</p>
+<p>whipuptitude: Shiny - and I don't even really know R</p>
+<p>cherries on the cake: Mojolicious because of surrounding helpers/functions</p>
+<p>cool feature: Seaside - the client server editing is just the thing!</p>
+</div>
+
+<div class='section'>
+
+<h1>famous last words</h1>
+<h3>in the end, the "cool" stuff is worthless</h3>
+<p>if it's buggy or broken,</p>
+<p>not really used in the wild,</p>
+<p>has no docs,</p>
+<p>no community to speak of,</p>
+<p>is too alien,</p>
+<p>or doesn't play well with others</p>
+<h3>in that regard, "popular" and "worse" IS better.</h3>
+</div>
+
+<div class='section'>
+
+<h1>Thank You Very Much!</h1>
+<h3>and that's how catpics are REALLY made</h3>
+<img src="cat-surrounded-by-paparazzi.jpeg"/>
+</div>
+</div>
+</body>
+</html>
+
+

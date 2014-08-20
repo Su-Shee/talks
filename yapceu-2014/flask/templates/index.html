@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Flask Example</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='flaskexample.css') }}">
+</head>
+<body>
+  <h1>Welcome to this amazing catpic app!</h1>
+  <div>
+    <form action="{{ url_for('assign_cats') }}" method="post">
+      <div><h3>choose a username</h3></div>
+      <div><input type="text" name="username" id="username"></div>
+      <div><button type="submit">gimme kitteh!</button></div>
+    </form>
+    </div>
+</body>
+</html>

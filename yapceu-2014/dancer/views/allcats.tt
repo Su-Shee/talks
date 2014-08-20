@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dancer Example</title>
+  <link rel="stylesheet" type="text/css" href="/dancerexample.css">
+</head>
+<body>
+  <h1>oh look! so many kittehz!</h1>
+  <div>
+    <a href="/">give me a kitteh with my name!</a>
+  </div>
+  <div>
+  [% IF allcats %]
+    [% FOREACH cat IN allcats %]
+    <div><img src="[% catpics_url _ cat %]"></div>
+    [% END %]
+  [% ELSE %]
+    <h3>no kittehz to show!</h3>
+  [% END %]
+  </div>
+</body>
+</html>

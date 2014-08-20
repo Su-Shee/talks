@@ -1,0 +1,272 @@
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/handler.c:386) Binding listener SUB socket tcp://127.0.0.1:9996 subscribed to: 
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Fri, 15 Aug 2014 14:42:29 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Fri, 15 Aug 2014 14:45:16 GMT [ERROR] (src/connection.c:142: errno: Resource temporarily unavailable) Handler not found: /favicon.ico
+Fri, 15 Aug 2014 14:45:16 GMT [ERROR] (src/connection.c:142: errno: Resource temporarily unavailable) Handler not found: /favicon.ico
+Fri, 15 Aug 2014 14:47:10 GMT [WARN] (src/register.c:336: errno: Resource temporarily unavailable) Killed 1 connections according to min_ping: 120, min_write_rate: 300, min_read_rate: 300
+Fri, 15 Aug 2014 14:47:10 GMT [WARN] (src/mongrel2.c:211: errno: Resource temporarily unavailable) Timeout task killed 1 tasks, waiting 10 seconds for more.
+Fri, 15 Aug 2014 14:48:33 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Fri, 15 Aug 2014 14:48:33 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/handler.c:245: errno: None) Receive on handler socket failed.
+Fri, 15 Aug 2014 14:48:33 GMT [WARN] (src/handler.c:287: errno: None) Handler task signaled, exiting.
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Fri, 15 Aug 2014 14:48:33 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/task/task.c:345: errno: None) Task is already added, refusing to do it again: (nil), (nil), 0x826cfd8=0x826cfd8
+Fri, 15 Aug 2014 14:48:33 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/handler.c:342: errno: None) Failed to deliver 0mq message to handler.
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/connection.c:265: errno: Bad file descriptor) Failed to deliver to handler: /kittehz
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/task/task.c:345: errno: None) Task is already added, refusing to do it again: (nil), (nil), 0x82521b0=0x82521b0
+Fri, 15 Aug 2014 14:48:33 GMT [ERROR] (src/task/task.c:208: errno: None) No runnable tasks, 5 tasks stalled
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/handler.c:386) Binding listener SUB socket tcp://127.0.0.1:9996 subscribed to: 
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Fri, 15 Aug 2014 14:48:40 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Fri, 15 Aug 2014 14:51:10 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Fri, 15 Aug 2014 14:51:10 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Fri, 15 Aug 2014 14:51:10 GMT [WARN] (src/register.c:336: errno: None) Killed 1 connections according to min_ping: 120, min_write_rate: 300, min_read_rate: 300
+Fri, 15 Aug 2014 14:51:10 GMT [WARN] (src/mongrel2.c:211: errno: None) Timeout task killed 1 tasks, waiting 10 seconds for more.
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/handler.c:245: errno: None) Receive on handler socket failed.
+Fri, 15 Aug 2014 14:51:10 GMT [WARN] (src/handler.c:287: errno: None) Handler task signaled, exiting.
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Fri, 15 Aug 2014 14:51:10 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/task/task.c:345: errno: None) Task is already added, refusing to do it again: (nil), (nil), 0x82521b0=0x82521b0
+Fri, 15 Aug 2014 14:51:10 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/handler.c:342: errno: None) Failed to deliver 0mq message to handler.
+Fri, 15 Aug 2014 14:51:10 GMT [ERROR] (src/connection.c:265: errno: Bad file descriptor) Failed to deliver to handler: /kittehz
+Fri, 15 Aug 2014 14:51:10 GMT [INFO] (src/mongrel2.c:336) Shutting down all running tasks as gracefully as possible.
+Fri, 15 Aug 2014 14:51:10 GMT [INFO] (src/mongrel2.c:344) Tasks now running (including main task): 2
+Fri, 15 Aug 2014 14:51:10 GMT [INFO] (src/mongrel2.c:354) Removing pid file /run/mongrel2.pid
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Sat, 16 Aug 2014 08:57:56 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Sat, 16 Aug 2014 08:57:57 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Sat, 16 Aug 2014 08:57:57 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:57:58 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:57:59 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:00 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:01 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:02 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:03 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:04 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:05 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:06 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:06 GMT [ERROR] (src/handler.c:370: errno: Address already in use) Too many bind attempts for handler tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:58:06 GMT [ERROR] (src/handler.c:103: errno: None) Failed to create handler socket.
+Sat, 16 Aug 2014 08:58:06 GMT [ERROR] (src/handler.c:279: errno: None) Failed to initialize handler, exiting.
+Sat, 16 Aug 2014 08:58:06 GMT [ERROR] (src/handler.c:322: errno: None) HANDLER TASK DIED: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 08:59:04 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz/
+Sat, 16 Aug 2014 08:59:21 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz
+Sat, 16 Aug 2014 09:00:05 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz/
+Sat, 16 Aug 2014 09:02:02 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Sat, 16 Aug 2014 09:02:02 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Sat, 16 Aug 2014 09:02:02 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Sat, 16 Aug 2014 09:02:02 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Sat, 16 Aug 2014 09:02:02 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Sat, 16 Aug 2014 09:02:02 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Sat, 16 Aug 2014 09:02:02 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Sat, 16 Aug 2014 09:02:02 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Sat, 16 Aug 2014 09:02:02 GMT [INFO] (src/mongrel2.c:336) Shutting down all running tasks as gracefully as possible.
+Sat, 16 Aug 2014 09:02:02 GMT [INFO] (src/mongrel2.c:344) Tasks now running (including main task): 1
+Sat, 16 Aug 2014 09:02:02 GMT [INFO] (src/mongrel2.c:354) Removing pid file /run/mongrel2.pid
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Sat, 16 Aug 2014 09:02:06 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Sat, 16 Aug 2014 09:02:07 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Sat, 16 Aug 2014 09:02:07 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:08 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:09 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:10 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:11 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:12 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:13 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:14 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:15 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:16 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:16 GMT [ERROR] (src/handler.c:370: errno: Address already in use) Too many bind attempts for handler tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:16 GMT [ERROR] (src/handler.c:103: errno: None) Failed to create handler socket.
+Sat, 16 Aug 2014 09:02:16 GMT [ERROR] (src/handler.c:279: errno: None) Failed to initialize handler, exiting.
+Sat, 16 Aug 2014 09:02:16 GMT [ERROR] (src/handler.c:322: errno: None) HANDLER TASK DIED: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:02:42 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz/
+Sat, 16 Aug 2014 09:03:41 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz/
+Sat, 16 Aug 2014 09:36:21 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Sat, 16 Aug 2014 09:36:21 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Sat, 16 Aug 2014 09:36:21 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Sat, 16 Aug 2014 09:36:21 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Sat, 16 Aug 2014 09:36:21 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Sat, 16 Aug 2014 09:36:21 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Sat, 16 Aug 2014 09:36:21 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Sat, 16 Aug 2014 09:36:21 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Sat, 16 Aug 2014 09:36:21 GMT [INFO] (src/mongrel2.c:336) Shutting down all running tasks as gracefully as possible.
+Sat, 16 Aug 2014 09:36:21 GMT [INFO] (src/mongrel2.c:344) Tasks now running (including main task): 1
+Sat, 16 Aug 2014 09:36:21 GMT [INFO] (src/mongrel2.c:354) Removing pid file /run/mongrel2.pid
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Sat, 16 Aug 2014 09:57:58 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Sat, 16 Aug 2014 09:57:59 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:00 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:01 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:02 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:03 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:04 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:05 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:06 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:07 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:08 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:08 GMT [ERROR] (src/handler.c:370: errno: Address already in use) Too many bind attempts for handler tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:08 GMT [ERROR] (src/handler.c:103: errno: None) Failed to create handler socket.
+Sat, 16 Aug 2014 09:58:08 GMT [ERROR] (src/handler.c:279: errno: None) Failed to initialize handler, exiting.
+Sat, 16 Aug 2014 09:58:08 GMT [ERROR] (src/handler.c:322: errno: None) HANDLER TASK DIED: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 09:58:22 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz
+Sat, 16 Aug 2014 09:58:24 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz/
+Sat, 16 Aug 2014 10:07:22 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Sat, 16 Aug 2014 10:07:22 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Sat, 16 Aug 2014 10:07:22 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Sat, 16 Aug 2014 10:07:22 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Sat, 16 Aug 2014 10:07:22 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Sat, 16 Aug 2014 10:07:22 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Sat, 16 Aug 2014 10:07:22 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Sat, 16 Aug 2014 10:07:22 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Sat, 16 Aug 2014 10:07:22 GMT [INFO] (src/mongrel2.c:336) Shutting down all running tasks as gracefully as possible.
+Sat, 16 Aug 2014 10:07:22 GMT [INFO] (src/mongrel2.c:344) Tasks now running (including main task): 1
+Sat, 16 Aug 2014 10:07:22 GMT [INFO] (src/mongrel2.c:354) Removing pid file /run/mongrel2.pid
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Sat, 16 Aug 2014 10:07:27 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Sat, 16 Aug 2014 10:07:28 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:29 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:30 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:31 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:32 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:33 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:34 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:35 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:36 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:38 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:38 GMT [ERROR] (src/handler.c:370: errno: Address already in use) Too many bind attempts for handler tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:38 GMT [ERROR] (src/handler.c:103: errno: None) Failed to create handler socket.
+Sat, 16 Aug 2014 10:07:38 GMT [ERROR] (src/handler.c:279: errno: None) Failed to initialize handler, exiting.
+Sat, 16 Aug 2014 10:07:38 GMT [ERROR] (src/handler.c:322: errno: None) HANDLER TASK DIED: tcp://127.0.0.1:9999
+Sat, 16 Aug 2014 10:07:39 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz/
+Sun, 17 Aug 2014 09:36:12 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Sun, 17 Aug 2014 09:36:12 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Sun, 17 Aug 2014 09:36:12 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Sun, 17 Aug 2014 09:36:12 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Sun, 17 Aug 2014 09:36:12 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Sun, 17 Aug 2014 09:36:12 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Sun, 17 Aug 2014 09:36:12 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Sun, 17 Aug 2014 09:36:12 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Sun, 17 Aug 2014 09:36:12 GMT [INFO] (src/mongrel2.c:336) Shutting down all running tasks as gracefully as possible.
+Sun, 17 Aug 2014 09:36:12 GMT [INFO] (src/mongrel2.c:344) Tasks now running (including main task): 1
+Sun, 17 Aug 2014 09:36:12 GMT [INFO] (src/mongrel2.c:354) Removing pid file /run/mongrel2.pid
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Sun, 17 Aug 2014 09:36:15 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Sun, 17 Aug 2014 09:36:16 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Sun, 17 Aug 2014 09:36:16 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:17 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:18 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:19 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:20 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:21 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:22 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:23 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:24 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:25 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:25 GMT [ERROR] (src/handler.c:370: errno: Address already in use) Too many bind attempts for handler tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:36:25 GMT [ERROR] (src/handler.c:103: errno: None) Failed to create handler socket.
+Sun, 17 Aug 2014 09:36:25 GMT [ERROR] (src/handler.c:279: errno: None) Failed to initialize handler, exiting.
+Sun, 17 Aug 2014 09:36:25 GMT [ERROR] (src/handler.c:322: errno: None) HANDLER TASK DIED: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:46 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Sun, 17 Aug 2014 09:40:46 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Sun, 17 Aug 2014 09:40:46 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Sun, 17 Aug 2014 09:40:46 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Sun, 17 Aug 2014 09:40:46 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Sun, 17 Aug 2014 09:40:46 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Sun, 17 Aug 2014 09:40:46 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Sun, 17 Aug 2014 09:40:46 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Sun, 17 Aug 2014 09:40:46 GMT [INFO] (src/mongrel2.c:336) Shutting down all running tasks as gracefully as possible.
+Sun, 17 Aug 2014 09:40:46 GMT [INFO] (src/mongrel2.c:344) Tasks now running (including main task): 1
+Sun, 17 Aug 2014 09:40:46 GMT [INFO] (src/mongrel2.c:354) Removing pid file /run/mongrel2.pid
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/server.c:317) Starting 0MQ with 1 threads.
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/request.c:58) MAX limits.header_count=1280
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/connection.c:1176) MAX limits.content_length=20480, limits.buffer_size=4096, limits.connection_stack_size=32768, limits.client_read_retries=5
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/connection.c:1182) MAX limits.proxy_read_retries=100, limits.proxy_read_retry_warn=10
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/task/fd.c:153) MAX limits.fdtask_stack=102400
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/handler.c:274) MAX allowing limits.handler_targets=128
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/handler.c:360) Binding handler PUSH socket tcp://127.0.0.1:9999 with identity: barbarbabar
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/control.c:437) Setting up control socket in at ipc://run/control
+Sun, 17 Aug 2014 09:40:50 GMT [INFO] (src/mongrel2.c:301) -- Mongrel2/1.9.1 Running. Copyright (C) Zed A. Shaw. Licensed BSD.
+Sun, 17 Aug 2014 09:40:51 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:52 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:53 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:54 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:55 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:56 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:57 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:58 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:40:59 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:41:00 GMT [WARN] (src/handler.c:366: errno: Resource temporarily unavailable) Failed to bind send socket trying again for: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:41:00 GMT [ERROR] (src/handler.c:370: errno: Address already in use) Too many bind attempts for handler tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:41:00 GMT [ERROR] (src/handler.c:103: errno: None) Failed to create handler socket.
+Sun, 17 Aug 2014 09:41:00 GMT [ERROR] (src/handler.c:279: errno: None) Failed to initialize handler, exiting.
+Sun, 17 Aug 2014 09:41:00 GMT [ERROR] (src/handler.c:322: errno: None) HANDLER TASK DIED: tcp://127.0.0.1:9999
+Sun, 17 Aug 2014 09:44:10 GMT [ERROR] (src/connection.c:246: errno: Resource temporarily unavailable) Handler shutdown while trying to deliver: /kittehz
+Sun, 17 Aug 2014 09:44:11 GMT [ERROR] (src/connection.c:142: errno: Resource temporarily unavailable) Handler not found: /favicon.ico
+Sun, 17 Aug 2014 09:44:11 GMT [ERROR] (src/connection.c:142: errno: Resource temporarily unavailable) Handler not found: /favicon.ico
+Tue, 19 Aug 2014 16:00:45 GMT [INFO] (src/mongrel2.c:96) SHUTDOWN REQUESTED: GRACEFUL (SIGINT again to EXIT NOW)
+Tue, 19 Aug 2014 16:00:45 GMT [ERROR] (src/task/net.c:231: errno: Bad file descriptor) Failed to accept after doing a poll on the socket.
+Tue, 19 Aug 2014 16:00:45 GMT [ERROR] (src/server.c:334: errno: None) Failed to accept on listening socket.
+Tue, 19 Aug 2014 16:00:45 GMT [INFO] (src/mongrel2.c:438) Server run exited, goodbye.
+Tue, 19 Aug 2014 16:00:45 GMT [INFO] (src/mongrel2.c:389) Shutdown requested, goodbye.
+Tue, 19 Aug 2014 16:00:45 GMT [ERROR] (src/control.c:92: errno: None) Receive on control failed.
+Tue, 19 Aug 2014 16:00:45 GMT [ERROR] (src/control.c:449: errno: None) Failed to read message: Success.
+Tue, 19 Aug 2014 16:00:45 GMT [INFO] (src/control.c:474) Control port exiting with error.
+Tue, 19 Aug 2014 16:00:45 GMT [INFO] (src/mongrel2.c:336) Shutting down all running tasks as gracefully as possible.
+Tue, 19 Aug 2014 16:00:45 GMT [INFO] (src/mongrel2.c:344) Tasks now running (including main task): 1
+Tue, 19 Aug 2014 16:00:45 GMT [INFO] (src/mongrel2.c:354) Removing pid file /run/mongrel2.pid

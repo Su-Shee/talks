@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Express Example
+    link(rel="stylesheet", type="text/css", href="/expressexample.css")
+  body
+    h1 oh look! so many kittehz!
+    div
+      a(href="/") give me a kitteh with my name!
+    div
+    div
+      if allcats
+        each cat in allcats
+        div
+          img /catpics/#{cat}
+      else
+        h3 no kittehz to show!
+    div

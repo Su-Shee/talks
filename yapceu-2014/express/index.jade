@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Express Example
+    link(rel="stylesheet", type="text/css", href="/expressexample.css")
+  body
+    h1 Welcome to this amazing catpic app!
+    div
+    form(action="/cats", method="POST")
+      div
+        h3 choose a username
+      div
+        input(type="text", name="username", id="username")
+      div
+        button(type="submit") gimme kitteh!
