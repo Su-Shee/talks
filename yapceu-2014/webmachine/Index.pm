@@ -11,7 +11,8 @@ use CSS::Tiny;
 
 use parent 'Web::Machine::Resource';
 
-sub content_types_provided { [{ 'text/css' => 'to_css'}, {'text/html' => 'to_html' }] }
+sub content_types_provided { [{ 'text/css' => 'to_css'},
+                              {'text/html' => 'to_html' }] }
 
 sub to_html {
   return render_file('index.jade');

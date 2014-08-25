@@ -23,7 +23,6 @@ post '/cats' => sub {
     template 'allcats', { allcats     => \@catpics,
                           catpics_url => uri_for('/catpics/') };
   }
-
 };
 
 get '/cats/:user' => sub {

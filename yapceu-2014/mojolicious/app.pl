@@ -15,14 +15,12 @@ get '/cats' => sub {
 
 post '/cats' => sub {
   my $c = shift;
-
   if ( $c->param('username') ) {
     my $user = $c->param('username');
     $c->redirect_to('/cats/'. $user);
   } else {
     $c->render('allcats', allcats => \@catpics);
   }
-
 };
 
 get '/cats/:user' => sub {

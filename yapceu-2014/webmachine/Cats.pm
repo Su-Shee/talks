@@ -19,11 +19,28 @@ opendir(my $dir, 'catpics/') or die "Can't open kittydir!";
 my @catpics = readdir($dir);
 
 sub allowed_methods        { [qw[ GET POST ]] }
-sub content_types_provided {[
-                              { 'text/html' => 'to_html' },
-                              { 'image/gif' => 'to_gif' },
-                              { 'text/css' => 'to_css' },
-                            ]}
+sub content_types_provided { [
+                               { 'text/html' => 'to_html' },
+                               { 'image/gif' => 'to_gif' },
+                               { 'text/css'  => 'to_css' },
+                             ]}
+
+sub to_css {
+  my $css = CSS::einy->new;
+  $css->read('machineexample.css');
+  return $css->write_string;
+}
+
+sub process_post {
+   my $self = shift;
+   $USER = $self->request->param('username');
+   $self->response->header('Location' => '/cats');
+   return \301;
+}
+
+sub to_gif {
+  return io->file('catpics/' . $CATPIC)->binary->all;
+}
 
 sub extract_user_from_route {
   return bind_path( '/:user', shift->request->path_info );
@@ -44,23 +61,4 @@ sub to_html {
         { template => { username => $USER, catpic => 'catpics/' . $CATPIC } } );
   }
 }
-
-sub to_css {
-  my $css = CSS::Tiny->new;
-  $css->read('machineexample.css');
-  return $css->write_string;
-}
-
-sub process_post {
-   my $self = shift;
-   print $self->request->param('username');
-   $USER = $self->request->param('username');
-   $self->response->header('Location' => '/cats');
-   return \301;
-}
-
-sub to_gif {
-  return io->file('catpics/' . $CATPIC)->binary->all;
-}
-
 1;
