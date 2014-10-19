@@ -1,0 +1,75 @@
+/* my pixel size / browser default pixel = em */
+/* 24px / 16px = 1.5em */
+html {
+	height:100%;
+  margin:0;
+  padding:0;
+}
+
+body {
+  height:100%;
+  padding: 0;
+  margin: 0;
+  background: #000000;
+  color: #ffffff;
+  font: normal 1.300em sans-serif;
+}
+
+div {
+  height:100%;
+  padding: 0em 1.5em 0em 1.5em;
+}
+
+p {
+  margin: 10px 0px 15px 0px;
+  border-left: 10px solid #22aa33;
+  padding-left: 10px;
+  font: normal 1.300em sans-serif;
+}
+
+a {
+  background-color: #0044aa;
+  color: #ffffff;
+  line-height: 1.3em;
+  padding: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+pre {
+  counter-reset: linecounter;
+  font: 1.4em 'Courier New', Courier, Fixed, monospace;
+  line-height: 1.5em;
+  background-color: #dd0022;
+  padding: 0.2em;
+  display: inline-block;
+}
+
+pre span.line {
+  counter-increment: linecounter;
+  color: #ffffff;
+}
+
+pre span.line:before {
+  content: counter(linecounter);
+  width: 1.2em;
+  margin-right: 10px;
+  display: inline-block;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+img {
+  max-width: 800px;
+  height: auto;
+  display: block;
+}
