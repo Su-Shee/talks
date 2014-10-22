@@ -27,8 +27,19 @@ p {
   font: normal 1.300em sans-serif;
 }
 
+.thingie {
+  line-height: 1.5em;
+  background-color: #ddcc00;
+  color: black;
+  padding: 0.2em;
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
 a {
-  background-color: #0044aa;
+  /*background-color: #0044aa;*/
+  border-bottom: 5px solid #0044aa;
   color: #ffffff;
   line-height: 1.3em;
   padding: 0.3em;
@@ -43,6 +54,8 @@ pre {
   background-color: #dd0022;
   padding: 0.2em;
   display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 pre span.line {
@@ -64,8 +77,8 @@ h1 {
 }
 
 h3 {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 img {
