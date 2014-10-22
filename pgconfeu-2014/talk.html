@@ -47,8 +47,8 @@
 <h3>well. a little</h3>
 <h3>we might have an ORM in play</h3>
 <p>we maybe write tests via DBIx::Class (Perl)</p>
-<p>..or ActiveRecord/DataMapper/Sequel (Ruby)..</p>
-<p>..or SQLAlchemy/Django (Python)...</p>
+<p>... or ActiveRecord/DataMapper/Sequel (Ruby)..</p>
+<p>... or SQLAlchemy/Django (Python)...</p>
 <p>... Hibernate and 3842 others (Java)...</p>
 </div>
 
@@ -78,15 +78,12 @@
 <h1>and my test strategy?</h1>
 <h3>does NOT matter</h3>
 <p>whether you prefer a pristine setup and tear down</p>
-<p>or rather database dump filled with messy real world data</p>
+<p>or rather a database dump filled with messy real world data</p>
 <p>both perfectly fine!</p>
 </div>
 
 <div class='section'>
 <h1>so what IS PgTAP?!</h1>
-<p>written by David "theory" Wheeler <a href="http://pgtap.org/">see
-here</a></p>
-<p>also available as <a href="http://theory.github.io/mytap/">myTAP for MySQL</a> No Postgres envy! :)</p>
 <p>
 "pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and
 PL/SQL. It includes a comprehensive collection of TAP-emitting assertion
@@ -97,8 +94,10 @@ frameworks. It can also be used in the xUnit testing style."
 meaning: you can write tests (ORLY?) and its output works in your
 Jenkins/BuildBot/YouNameIt CD/CI thing
 </p>
-<p>btw: if you LOVE git and DB change management, you might like theory's <a
-href="http://sqitch.org/">Sqitch</a>
+<p>written by David "theory" Wheeler <a href="http://pgtap.org/">see
+here</a></p>
+<p>also available as <a href="http://theory.github.io/mytap/">myTAP for MySQL</a> No Postgres envy! :)</p>
+<p>btw: for DB change management: theory's <a href="http://sqitch.org/">Sqitch</a>
 </div>
 
 <div class='section'>
@@ -115,14 +114,14 @@ href="http://sqitch.org/">Sqitch</a>
 <div class='section'>
 <h1>what is your database?</h1>
 <h3>a short reminder what we have</h3>
-<p>databases, schemata, configuration</p>
+<p>databases, schemas, configuration</p>
 <p>roles, groups</p>
 <p>tables and columns of course</p>
 <p>types, checks, constraints</p>
 <p>indexes, sequences,</p>
 <h3>and, of course actually doing stuff with your data:</h3>
 <p>views, triggers, functions</p>
-<p>selects, inserts, updates, deletes</p>
+<p>selects, inserts, updates, deletes, alters</p>
 </div>
 
 <div class='section'>
@@ -143,449 +142,84 @@ href="http://sqitch.org/">Sqitch</a>
 <span class="line">SELECT * FROM finish();</span>
 <span class="line">ROLLBACK;</span>
 </pre>
+<p>I first thought this is too boring, testing if a table is "there" - but then.. join on a million tables.. interesting test, for sure. :)</p>
 </div>
 
 <div class='section'>
 <h1>utmost basic tests: existence</h1>
 <h3>to get a feeling, just check if you actually have everything</h3>
-
-</div>
-
-<div class='section'>
-
-<h1>so, what do we have today?</h1>
-<h3>kind of the mother of all modern frameworks</h3>
-<p>Ruby: Rails, Sinatra</p>
-<h3>and her derivatives</h3>
-<p>Python: Django, Flask</p>
-<p>Perl: Catalyst, Dancer, Mojolicious</p>
-<p>(not talking about old stuff anymore, really not!)</p>
-<p>JavaScript: Express, Meteor</p>
-</div>
-
-<div class='section'>
-
-<h1>and these...</h1>
-<p>Java: Well that's a league of its own</p>
-<p>PHP: that too</p>
-</div>
-
-<div class='section'>
-
-<h1>everybody has one these days!</h1>
-</div>
-
-<div class='section'>
-
-<h1>yes, everybody!</h1>
-<p>Smalltalk: Seaside, Illiad</p>
-<p>R: Shiny (not kidding, I'll show you)</p>
-<p>Haskell: Yesod</p>
-<p>Erlang: Web Machine</p>
-<p>COBOL: NOW WITH CGI SUPPORT!</p>
-</div>
-
-<div class='section'>
-
-<h1>how to categorize available frameworks?</h1>
-<h3>no, they're not all MVC - Routes - Templates - ORM combinations</h3>
-<h3>but let me show you</h3>
-</div>
-
-<div class='section'>
-<h1>we have 'tis amazing kitty application...</h1>
-<a href="http://localhost:5000">kitties served with flask</a>
-<br/>
-<br/>
-<a href="http://localhost:4567">kitties served with sinatra</a>
-<br/>
-<br/>
-<a href="http://localhost:3000">kitties served with dancer</a>
-<br/>
-<br/>
-<a href="http://localhost:3000">kitties served with mojolicious</a>
-<br/>
-</div>
-
-<div class='section'>
-
-<h1>which looks like this in...</h1>
-</div>
-
-<div class='section'>
-
-<h1>Flask - Jinja</h1>
-<img src="flask-code.png"/>
-<img src="flask-template.png"/>
-</div>
-
-<div class='section'>
-
-<h1>Sinatra - Slim</h1>
-<img src="sinatra-code.png"/>
-<img src="sinatra-template.png"/>
-</div>
-
-<div class='section'>
-
-<h1>Dancer - Template Toolkit</h1>
-<img src="dancer-code.png"/>
-<img src="dancer-template.png"/>
-</div>
-
-<div class='section'>
-
-<h1>Mojolicious - Mojo's Templates</h1>
-<img src="mojo-code.png"/>
-<img src="mojo-template.png"/>
-</div>
-
-<div class='section'>
-
-<h1>To let it really sit with you for a second:</h1>
-</div>
-
-<div class='section'>
-
-<h1>routes:</h1>
-<h3>Flask</h3>
-<pre><span class="line">@app.route('/cats/<user>')</span></pre>
-<h3>Sinatra</h3>
-<pre><span class="line">get '/cats/:user' do</span></pre>
-<h3>Dancer:</h3>
-<pre><span class="line">get '/cats/:user' => sub {</span></pre>
-<h3>Mojolicious:</h3>
-<pre><span class="line">get '/cats/:user' => sub {</span></pre>
-</div>
-
-<div class='section'>
-
-<h1>your params:</h1>
-<h3>Flask</h3>
-<pre><span class="line">user = request.form['username']</span></pre>
-<h3>Sinatra</h3>
-<pre><span class="line">username = params[:user]</span></pre>
-<h3>Dancer</h3>
-<pre><span class="line">my $user = params->{'username'};</span></pre>
-<h3>Mojolicious</h3>
-<pre><span class="line">my $user = $c->param('user');</span></pre>
-
-</div>
-
-<div class='section'>
-
-<h1>templates:</h1>
-<h3>Jinja</h3>
-<pre><span class="line">&lt;h1&gt;here, {{ username }} have your kitteh!&lt;/h1&gt;</span></pre>
-<h3>Slim/Jade</h3>
-<pre><span class="line">h1 here, #{username} have your kitteh!</span></pre>
-<h3>Template Toolkit</h3>
-<pre><span class="line">&lt;h1&gt;here, [% username %] have your kitteh!&lt;/h1&gt;</span></pre>
-<h3>Mojo</h3>
-<pre><span class="line">&lt;h1&gt;here, &lt;%= $username %&gt; have your kitteh!&lt;/h1&gt;</span></pre>
-</div>
-
-<div class='section'>
-
-<h1>not really much of a difference, eh?</h1>
-</div>
-
-<div class='section'>
-
-<h1>the devil is in the details</h1>
-<p>what kind of helpers? any validation helpers?</p>
-<p>before, after rendering hooks?</p>
-<p>model integration/ORM?</p>
-<p>how to deal with sessions?</p>
-<p>does it have flash messages?</p>
-<p>authentication and authorization?</p>
-<p>does it have plugins or something similar?</p>
-<p>good documentation? lots of folklore, best practices, examples, real
-applications to take a look at?</p>
-</div>
-
-<div class='section'>
-
-<h1>So, anything else?</h1>
-<p>YES!</p>
-<p>two different way of thinking a web application</p>
-</div>
-
-<div class='section'>
-
-<h1>"loose"</h1>
-<p>service oriented</p>
-<p>steve yegge's amazon service rant</p>
-<p>"raw"/everything exposed</p>
-<p>high level of control over the entire request/response cycle</p>
-</div>
-
-
-<div class='section'>
-
-<h1>"tight"</h1>
-<p>highly integrated</p>
-<p>application oriented</p>
-<p>"like real GUI programming"</p>
-<p>oh god, please don't make me touch HTML/CSS</p>
-<p>components</p>
-<p>coming with everything out of the box</p>
-<p>why would I even bother with templates?!</p>
-</div>
-
-<div class='section'>
-
-<h1>"very raw, high level of control"</h1>
-
-<p>Erlang's "Web Machine" (also in Ruby, Perl, Node)</p>
-<p>Mongrel2 (ok, not really a web framework)</p>
-<p>back in the day: mod_perl (Yes!)</p>
-</div>
-
-<div class='section'>
-
-<h1>"like GUI, components, tightly integrated"</h1>
-<p>Smalltalk's Seaside</p>
-<p>R's Shiny (for the name alone.. :)</p>
-</div>
-
-<div class='section'>
-
-<h1>let's take a look:</h1>
-</div>
-
-<div class='section'>
-
-<h1>Web Machine:</h1>
-<p>the resource is "the thing" you have</p>
-<p>WOAH, flowchart! see the insane diagram over at basho's</p>
-</br>
-<a href="https://raw.githubusercontent.com/wiki/basho/webmachine/images/http-headers-status-v3.png">insane state diagram</a>
-</br>
-</br>
-</br>
-<p>running through every step of request/response PER RESOURCE</p>
-<p>having 50 or so subs/functions exposing every step of the way (plus some
-helpers)</p>
-</br>
-<a href="http://localhost:5000">kitties served by web machine</a>
-</div>
-
-<div class='section'>
-
-<h1>looks like this:</h1>
 <pre>
-<span class="line">sub allowed_methods { [qw[ GET POST ]] }</span>
-<span class="line">sub content_types_provided { [{ 'text/css' => 'to_css'},</span>
-<span class="line">                           {'text/html' => 'to_html' }] }</span>
-</pre>
-
-<h3>and you take care of the details</h3>
-
-<pre>
-<span class="line">sub process_post { ... }</span>
-<span class="line">sub to_html { ... }</span>
-<span class="line">sub to_css { ... }</span>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(3);</span>
+<span class="line">SELECT has_table('cats');</span>
+<span class="line">SELECT has_pk('cats');</span>
+<span class="line">SELECT has_index('cats', 'cats_);</span>
+<span class="line">SELECT has_check('cats');</span>
+<span class="line">SELECT has_column('cats', 'id');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
 </pre>
 </div>
 
 <div class='section'>
-
-<h1>a bit more of the example</h1>
-<img src="webmachine.png"/>
-</div>
-
-<div class='section'>
-
-<h1>advantages</h1>
-<p>very high control</p>
-<p>of RESTful buddha nature</p>
-<p>you can do with it whatever you want</p>
-<p>combine it with whatever you like</p>
-<p>#dammitstevan</p>
-</div>
-
-<div class='section'>
-
-<h1>caveats</h1>
-<p>you have to do everything yourself, by hand</p>
-<p>you better really know HTTP</p>
-<p>needs to be combined with other tools/modules</p>
-</div>
-
-<div class='section'>
-
-<h1>Mongrel2</h1>
-<p>not really a web framework, ok</p>
-<p>great concept: route pointing to a ZeroMQ handler!</p>
-<p>very service-ish</p>
-<p>sadly a bit weird, SQLite to store, config = python code</p>
-</div>
-
-<div class='section'>
-
-<h1>looks like this</h1>
+<h1>... more things which should exist..</h1>
+<h3>almost everything has a test for existence</h3>
 <pre>
-<span class="line">'/kittehz/': Handler(send_spec='tcp://127.0.0.1:9996',</span>
-<span class="line">                     send_ident='barbarbabar',</span>
-<span class="line">                     recv_spec='tcp://127.0.0.1:9999',</span>
-<span class="line">                     recv_ident='bazbazbaz')</span>
+<span class="line">SELECT has_sequence('public', 'cats_id_seq',</span>
+<span class="line"> 'Column type serial therefore has a sequence');</span>
+<span class="line">SELECT has_function('nicer_age');</span>
+<span class="line">SELECT has_trigger('traits', 'updated');</span>
+<span class="line">SELECT has_index('cats', 'cats_pkey');</span>
+<span class="line">SELECT has_role('catsitter');</span>
 </pre>
 </div>
 
-
 <div class='section'>
+<h1>really, a lot of tests</h1>
 
-<h1>when to use "loose"</h1>
-<p>great for APIs</p>
-<p>when you really REALLY want REST all the way</p>
-<p>when you hate everything else and roll your own</p>
-<p>because you can</p>
+<span class="thingie">has_tablespace()</span>
+<span class="thingie">has_schema()</span>
+<span class="thingie">has_relation()</span>
+<span class="thingie">has_table()</span>
+<span class="thingie">has_view()</span>
+<span class="thingie">has_sequence()</span>
+<span class="thingie">has_foreign_table()</span>
+<span class="thingie">has_type()</span>
+<span class="thingie">has_composite()</span>
+<span class="thingie">has_domain()</span>
+<span class="thingie">has_enum()</span>
+<span class="thingie">has_index()</span>
+<span class="thingie">has_trigger()</span>
+<span class="thingie">has_rule()</span>
+<span class="thingie">has_function()</span>
+<span class="thingie">has_cast()</span>
+<span class="thingie">has_operator()</span>
+<span class="thingie">has_rightop()</span>
+<span class="thingie">has_opclass()</span>
+<span class="thingie">has_role()</span>
+<span class="thingie">has_user()</span>
+<span class="thingie">has_group()</span>
+<span class="thingie">has_language()</span>
+<span class="thingie">has_column()</span>
+<span class="thingie">col_has_default()</span>
+<span class="thingie">has_pk()</span>
+<span class="thingie">has_fk()</span>
+<span class="thingie">has_unique()</span>
+<span class="thingie">has_check()</span>
+<span class="thingie">col_has_check()</span>
 </div>
 
 <div class='section'>
-
-<h1>Smalltalk Seaside</h1>
-<p>you program an application, a GUI, a "page", a component</p>
-<p>coolest shit feature EVAR: edit in client, updated automatically on server and
-the other way around</p>
-<a href="http://localhost:8080">kitties served by seaside</a>
+<h1>yes! foo_hasnt exists too!</h1>
+<h3>all tests like this have their "should NOT exist" equivalent</h3>
 </div>
 
 <div class='section'>
-
-<h1>looks like this</h1>
-<img src="smalltalk.png"/>
+<h1></h1>
+<h3></h3>
 </div>
 
 <div class='section'>
-
-<h1>advantages</h1>
-<p>everything is an object and they REALLY mean it</p>
-<p>pretty cool language</p>
-<p>they invented everything anyways, why not use the orginal</p>
-<p>if you know Smalltalk (haha) and know GUI programming it's extremely productive</p>
-<p>never bother to touch HTML or CSS on your own (bah. tsk.)</p>
-<p>good argument: "99% of all websites are small, we don't need to scale"</p>
-</div>
-
-<div class='section'>
-
-<h1>caveats:</h1>
-<p>extremely alien if you come from the "regular" kinds of frameworks</p>
-<p>you better REALLY know OO</p>
-<p>so tightly intergrated to Smalltalk images - you can't even easily version it
-ghetto language problem (they do everything EVERYTHING their own way. Ok, they
-invented most ways, but..)</p>
-<p>so tightly integrated and so much magic that .. good luck if something doesn't
-work</p>
-<p>no folklore, no examples in the wild to take a look at</p>
-</div>
-
-<div class='section'>
-
-<h1>R's Shiny</h1>
-<p>reactive</p>
-<p>whip up reactive, interactive charts in minutes</p>
-<p>very short code, feels a bit declarative</p>
-<a href="http://localhost:3000">kitties served by shiny</a>
-</div>
-
-<div class='section'>
-
-<h1>looks like this</h1>
-<h3>server part</h3>
-
-<pre>
-<span class="line">shinyServer ( function (input, output) {</span>
-<span class="line"> output$caption <- renderText( {</span>
-<span class="line">    paste("here ", input$username, " have your kitteh!")</span>
-<span class="line">  } )</span>
-<span class="line">})</span>
-</pre>
-
-<h3>ui part</h3>
-<pre>
-<span class="line">shinyUI( pageWithSidebar(</span>
-<span class="line">  mainPanel(</span>
-<span class="line">    h3( textOutput("caption") ),</span>
-<span class="line">    imageOutput("catpic")</span>
-<span class="line">  )</span>
-<span class="line">))</span>
-</pre>
-
-</div>
-
-
-<div class='section'>
-
-<h1>advantages</h1>
-<p>R... *LOL* .. now that's is a thing.. wow :)</p>
-<p>most people know it as "statistic's thing"</p>
-<p>it's a statistics environment with a programming language behind (books usally
-have like 2 pages about "the language")</p>
-<p>you "use it" rather than really "program it"</p>
-<p>really well done in terms of "serve this data"</p>
-<p>great examples</p>
-<p>R in general has very nice documentation</p>
-<p>"CRAN" (modules are called cranberries :)</p>
-</div>
-
-<div class='section'>
-
-<h1>caveat</h1>
-<p>do not look into the code as a developer. really don't</p>
-<p>magic behind it to the extreme.</p>
-<p>it's a total special interest thing - but at least extremely practical</p>
-</div>
-
-<div class='section'>
-
-<h1>when to use "tight"</h1>
-<p>productivity &amp; whipuptitude</p>
-<p>"I just want this little thing.."</p>
-<p>you hate templates</p>
-<p>"we have this big enterprise thing running for 15 years now.."</p>
-<p>because you can</p>
-</div>
-
-<div class='section'>
-
-<h1>other concepts to steal from</h1>
-<p>almost all functional languages wrap HTML and CSS into their language, partially even JavaScript</p>
-<p>there's also the concept of CouchDB to just HTTP directly with your database -
-Tim Bunce has something vaguely related with DBIC/Web Machine: "WebAPI::DBIC"</p>
-<p>templates? really? why not have real widgets?</p>
-</div>
-
-<div class='section'>
-
-<h1>VERDICT</h1>
-<p>docs and tutorials: Flask - in particular "The Flask Mega Tutorial"</p>
-<p>whipuptitude: Shiny - and I don't even really know R</p>
-<p>cherries on the cake: Mojolicious because of surrounding helpers/functions</p>
-<p>cool feature: Seaside - the client server editing is just the thing!</p>
-<p>nice community: Dancer - thanks to the lovely vegan code princess :)</p>
-<p>personal taste: Web::Machine - because I have no idea. Just appeals to me</p>
-<p>shortcut: CouchDB - why have a web framework in between at all? ;)</p>
-</div>
-
-<div class='section'>
-
-<h1>famous last words</h1>
-<h3>in the end, the "cool" stuff is worthless</h3>
-<p>if it's buggy or broken,</p>
-<p>not really used in the wild,</p>
-<p>has no docs,</p>
-<p>no community to speak of,</p>
-<p>is too alien,</p>
-<p>or doesn't play well with others</p>
-<p>remember the Reddit rewrite from Lisp to Python? ENVIRONMENT!</p>
-<h3>in that regard, "popular" and "worse" IS better.</h3>
-</div>
-
-<div class='section'>
-
 <h1>Thank You Very Much!</h1>
 <h3>and that's how catpics are REALLY made</h3>
 <img src="cat-surrounded-by-paparazzi.jpeg"/>
