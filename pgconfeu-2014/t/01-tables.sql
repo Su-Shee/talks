@@ -10,6 +10,7 @@ SELECT has_role('catsitter');
 
 SELECT has_table('cats');
 SELECT has_pk('cats');
+SELECT has_index('cats', 'cats_pkey');
 SELECT has_check('cats');
 
 SELECT has_column('cats', 'id');
