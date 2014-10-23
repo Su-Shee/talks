@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (PgConfEU 2014)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>show me queries!</h1>
+<h3>testing if something WORKS ok</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(1);</span>
+<span class="line">SELECT lives_ok(</span>
+<span class="line">  'INSERT INTO</span>
+<span class="line">    cats (name, breed, origin)</span>
+<span class="line">  VALUES</span>
+<span class="line">    ($$Hissy$$, $$Siamese$$, $$TH$$);',</span>
+<span class="line">  'inserting a new cat should be ok'</span>
+<span class="line">);</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>exspecting this test to succeed</h3>
+<span id="nav"><a href="slide26.html">next</a></span>
+</div>
+</body>
+</html>

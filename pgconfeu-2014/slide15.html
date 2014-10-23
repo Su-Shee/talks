@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (PgConfEU 2014)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>...more things which should exist...</h1>
+<h3>almost everything has a test for existence</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(5);</span>
+<span class="line">SELECT has_sequence('public', 'cats_id_seq',</span>
+<span class="line"> 'Column type serial therefore has a sequence');</span>
+<span class="line">SELECT has_function('nicer_age');</span>
+<span class="line">SELECT has_trigger('traits', 'updated');</span>
+<span class="line">SELECT has_index('cats', 'cats_pkey');</span>
+<span class="line">SELECT has_role('catsitter');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<span id="nav"><a href="slide16.html">next</a></span>
+</div>
+</body>
+</html>

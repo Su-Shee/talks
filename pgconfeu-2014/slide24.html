@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (PgConfEU 2014)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>...or you have lots of functions?</h1>
+<h3>testing stored procedures</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(5);</span>
+<span class="line">SELECT has_function('nicer_age');</span>
+<span class="line">SELECT matches(nicer_age(cats.birthday), 'months') </span>
+<span class="line">    FROM cats WHERE name = 'Kitty';</span>
+<span class="line">SELECT isa_ok(nicer_age('2014-10-09'), 'text', </span>
+<span class="line">   'Function nicer_age returns text.');</span>
+<span class="line">SELECT function_returns('nicer_age', 'text');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>testing language, returns, type, existence and so on</h3>
+<span id="nav"><a href="slide25.html">next</a></span>
+</div>
+</body>
+</html>

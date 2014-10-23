@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (PgConfEU 2014)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>basic tests: existence</h1>
+<h3>checking if you actually have everything</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(5);</span>
+<span class="line">SELECT has_table('cats');</span>
+<span class="line">SELECT has_pk('cats');</span>
+<span class="line">SELECT has_index('cats', 'cats_);</span>
+<span class="line">SELECT has_check('cats');</span>
+<span class="line">SELECT has_column('cats', 'id');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<span id="nav"><a href="slide15.html">next</a></span>
+</div>
+</body>
+</html>

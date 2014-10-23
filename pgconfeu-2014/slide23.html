@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (PgConfEU 2014)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>testing even more interesting things</h1>
+<h3>like... triggers!</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(4);</span>
+<span class="line">SELECT has_function('my_timestamp');</span>
+<span class="line">SELECT function_lang_is('my_timestamp', 'plpgsql');</span>
+<span class="line">SELECT function_returns('my_timestamp', 'trigger');</span>
+<span class="line">SELECT trigger_is('traits', 'updated', 'my_timestamp');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>testing language, returns, existence and so on</h3>
+<span id="nav"><a href="slide24.html">next</a></span>
+</div>
+</body>
+</html>

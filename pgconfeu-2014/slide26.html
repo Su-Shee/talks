@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (PgConfEU 2014)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>more queries</h1>
+<h3>testing if something FAILS ok</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(1);</span>
+<span class="line">SELECT throws_ok(</span>
+<span class="line">  'INSERT INTO</span>
+<span class="line">    cats (name, breed, origin)</span>
+<span class="line">  VALUES</span>
+<span class="line">    ($$MaoMao$$, $$Ordinary Housecat$$, $$Germany$$);',</span>
+<span class="line">  'new row for relation "cats" violates check constraint "cats_origin_check"',</span>
+<span class="line">  'inserting origin as country name should violate a check constraint'</span>
+<span class="line">);</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>failure is success! ;)</h3>
+<span id="nav"><a href="slide27.html">next</a></span>
+</div>
+</body>
+</html>
+
