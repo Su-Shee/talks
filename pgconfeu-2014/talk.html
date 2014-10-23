@@ -20,17 +20,19 @@
 
 <div class='section'>
 <h1>Database Unit Testing with PGTap</h1>
-<h3>how to test the living sh*** out of your database</h3>
+<h3>how to test the living sh** out of your database</h3>
+<br/>
+<br/>
 <a href="https://github.com/Su-Shee/talks">slides and code on github</a>
 </div>
 
 <div class='section'>
 <h1>about me</h1>
+<p>my code and me go by "Su-Shee" on the internet</p>
 <p>political scientist by education so I have a thing for "data"</p>
-<p>one of those self-tought web &amp; linux people since '94</p>
+<p>one of those self-taught web &amp; linux people since '94</p>
 <p>mostly does perl, javascript, postgres, R and some shell</p>
 <p>writes "health applications" (enterprise in disguise) during the day</p>
-<p>does some writing for (german) tech magazines here and there</p>
 </div>
 
 <div class='section'>
@@ -44,23 +46,23 @@
 
 <div class='section'>
 <h1>database testing</h1>
-<h3>well. a little</h3>
+<h3>well. a little.</h3>
 <h3>we might have an ORM in play</h3>
 <p>we maybe write tests via DBIx::Class (Perl)</p>
-<p>... or ActiveRecord/DataMapper/Sequel (Ruby)..</p>
-<p>... or SQLAlchemy/Django (Python)...</p>
-<p>... Hibernate and 3842 others (Java)...</p>
+<p>...or ActiveRecord/DataMapper/Sequel (Ruby)...</p>
+<p>...or SQLAlchemy/Django (Python)...</p>
+<p>...Hibernate and 3842 others (Java)...</p>
 </div>
 
 <div class='section'>
 
 <h1>database testing</h1>
-<h3>or we don't have an ORM..</h3>
-<p>and do some testing via DBI (Perl)...</p>
-<p>... or PsycoPg (Python)</p>
-<p>... Ruby has a DBI too..</p>
-<p>... there's Java's JDBC "plain"...</p>
-<p>well, any language has some DB interface one way or another</p>
+<h3>or maybe we don't have an ORM</h3>
+<p>...because they didn't exist yet when our application was written initially</p>
+<p>...so testing via DBI (Perl)...</p>
+<p>...or PsycoPg (Python)...</p>
+<p>...Ruby has a DBI too</p>
+<p>and so on. well, any language has some DB interface one way or another</p>
 </div>
 
 <div class='section'>
@@ -80,10 +82,13 @@
 <p>whether you prefer a pristine setup and tear down</p>
 <p>or rather a database dump filled with messy real world data</p>
 <p>both perfectly fine!</p>
+</br>
+<p>P.S.: no matter how horrible your database is!</p>
 </div>
 
 <div class='section'>
 <h1>so what IS PgTAP?!</h1>
+<br/>
 <p>
 "pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and
 PL/SQL. It includes a comprehensive collection of TAP-emitting assertion
@@ -94,6 +99,7 @@ frameworks. It can also be used in the xUnit testing style."
 meaning: you can write tests (ORLY?) and its output works in your
 Jenkins/BuildBot/YouNameIt CD/CI thing
 </p>
+<br/>
 <p>written by David "theory" Wheeler <a href="http://pgtap.org/">see
 here</a></p>
 <p>also available as <a href="http://theory.github.io/mytap/">myTAP for MySQL</a> No Postgres envy! :)</p>
@@ -101,13 +107,14 @@ here</a></p>
 </div>
 
 <div class='section'>
-<h1>PgTAP how to</h1>
-<h3>... it's really complicated</h3>
+<h1>PgTAP how to install</h1>
+<h3>...it's really complicated</h3>
 <p>download from <a href="http://pgxn.org/dist/pgtap/">PGXN</a></p>
 <p>configure, make installcheck, make install</p>
 <p>create extension pgtap;</p>
 <p>that was it.</p>
 <p>the database has now testing*</p>
+<br/>
 <p>*there's of course more options - see extensive docs!</p>
 </div>
 
@@ -119,20 +126,28 @@ here</a></p>
 <p>tables and columns of course</p>
 <p>types, checks, constraints</p>
 <p>indexes, sequences,</p>
-<h3>and, of course actually doing stuff with your data:</h3>
+<h3>and, of course actually doing stuff with our data:</h3>
 <p>views, triggers, functions</p>
 <p>selects, inserts, updates, deletes, alters</p>
 </div>
 
 <div class='section'>
+<h1>fancy example database</h1>
+<h3>testing cat pictures with postgres!</h3>
+<img src="kittenphant.jpg"/>
+<br/>
+<br/>
+<a href="http://localhost:3000">example app serving catpics included in this talk ;)</a>
+</div>
+
+<div class='section'>
 <h1>gimme a test already!</h1>
-<h3>something super simple you can do at home</h3>
-<h3>you have somewhere:</h3>
+<h3>you have done somewhere, sometime:</h3>
 <pre>
 <span class="line">CREATE TABLE cats ();</span>
 <span class="line">CREATE TABLE traits ();</span>
 </pre>
-<h3>and, do you really?</h3>
+<h3>and, did you really?</h3>
 <pre>
 <span class="line">BEGIN;</span>
 <span class="line">SELECT plan(3);</span>
@@ -142,15 +157,15 @@ here</a></p>
 <span class="line">SELECT * FROM finish();</span>
 <span class="line">ROLLBACK;</span>
 </pre>
-<p>I first thought this is too boring, testing if a table is "there" - but then.. join on a million tables.. interesting test, for sure. :)</p>
+<p>I first thought this is too boring, testing if a table is "there" - but then... the talk about join on a million tables.. interesting test, for sure. :)</p>
 </div>
 
 <div class='section'>
-<h1>utmost basic tests: existence</h1>
-<h3>to get a feeling, just check if you actually have everything</h3>
+<h1>basic tests: existence</h1>
+<h3>checking if you actually have everything</h3>
 <pre>
 <span class="line">BEGIN;</span>
-<span class="line">SELECT plan(3);</span>
+<span class="line">SELECT plan(5);</span>
 <span class="line">SELECT has_table('cats');</span>
 <span class="line">SELECT has_pk('cats');</span>
 <span class="line">SELECT has_index('cats', 'cats_);</span>
@@ -162,21 +177,24 @@ here</a></p>
 </div>
 
 <div class='section'>
-<h1>... more things which should exist..</h1>
+<h1>...more things which should exist...</h1>
 <h3>almost everything has a test for existence</h3>
 <pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(5);</span>
 <span class="line">SELECT has_sequence('public', 'cats_id_seq',</span>
 <span class="line"> 'Column type serial therefore has a sequence');</span>
 <span class="line">SELECT has_function('nicer_age');</span>
 <span class="line">SELECT has_trigger('traits', 'updated');</span>
 <span class="line">SELECT has_index('cats', 'cats_pkey');</span>
 <span class="line">SELECT has_role('catsitter');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
 </pre>
 </div>
 
 <div class='section'>
 <h1>really, a lot of tests</h1>
-
 <span class="thingie">has_tablespace()</span>
 <span class="thingie">has_schema()</span>
 <span class="thingie">has_relation()</span>
@@ -210,18 +228,265 @@ here</a></p>
 </div>
 
 <div class='section'>
-<h1>yes! foo_hasnt exists too!</h1>
+<h1>other things shouldn't exist</h1>
 <h3>all tests like this have their "should NOT exist" equivalent</h3>
+<span class="thingie">hasnt_index()</span>
+<span class="thingie">hasnt_trigger()</span>
+<span class="thingie">hasnt_role()</span>
+<span class="thingie">...</span>
+
 </div>
 
 <div class='section'>
-<h1></h1>
-<h3></h3>
+<h1>I don't want to write "hasnt" a million times!</h1>
+<h3>and you don't have to!</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(1);</span>
+<span class="line">SELECT columns_are('cats',</span>
+<span class="line">  ARRAY['id', 'picture', 'breed', 'origin', 'birthday']);</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>*_are tests for "this has to be there, but ONLY this and nothing else"</h3>
+</div>
+
+<div class='section'>
+<h1>exclusive tests</h1>
+<h3>slightly different set, but extensive</h3>
+<span class="thingie">tablespaces_are() </span>
+<span class="thingie">schemas_are() </span>
+<span class="thingie">tables_are() </span>
+<span class="thingie">views_are() </span>
+<span class="thingie">sequences_are() </span>
+<span class="thingie">columns_are() </span>
+<span class="thingie">indexes_are() </span>
+<span class="thingie">triggers_are() </span>
+<span class="thingie">functions_are() </span>
+<span class="thingie">roles_are() </span>
+<span class="thingie">users_are() </span>
+<span class="thingie">groups_are() </span>
+<span class="thingie">languages_are() </span>
+<span class="thingie">opclasses_are() </span>
+<span class="thingie">rules_are() </span>
+<span class="thingie">types_are() </span>
+<span class="thingie">domains_are() </span>
+<span class="thingie">enums_are() </span>
+<span class="thingie">casts_are() </span>
+<span class="thingie">operators_are() </span>
+</div>
+
+
+<div class='section'>
+<h1>there's more basic functions!</h1>
+<h3>basic testing functions - (ab)use it for configs</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(1);</span>
+<span class="line">SELECT is(pg_settings.setting, '100')</span>
+<span class="line">    FROM pg_settings</span>
+<span class="line">    WHERE name = 'max_connections';</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>seeming simple, but very flexible</h3>
+<span class="thingie">ok()</span>
+<span class="thingie">is()</span>
+<span class="thingie">isnt()</span>
+<span class="thingie">matches()</span>
+<span class="thingie">imatches()</span>
+<span class="thingie">doesnt_match()</span>
+<span class="thingie">doesnt_imatch()</span>
+<span class="thingie">alike()</span>
+<span class="thingie">ialike()</span>
+<span class="thingie">unalike()</span>
+<span class="thingie">unialike()</span>
+<span class="thingie">cmp_ok()</span>
+<span class="thingie">pass()</span>
+<span class="thingie">fail()</span>
+<span class="thingie">isa_ok()</span>
+</div>
+
+<div class='section'>
+<h1>if we have everything, let's move on</h1>
+<h3>...and test some columns</h3>
+<pre>
+<span class="line">SELECT has_column('cats', 'birthday');</span>
+<span class="line">SELECT col_not_null('cats', 'birthday');</span>
+<span class="line">SELECT col_has_default('cats', 'birthday');</span>
+<span class="line">SELECT col_default_is('cats', 'birthday', 'now()');</span>
+<span class="line">SELECT col_type_is('cats', 'birthday', 'date');</span>
+<span class="line"></span>
+<span class="line">SELECT col_has_check('cats', 'origin');</span>
+</pre>
+<h3>it's about types, checks, constraints, null and defaults</h3>
+</div>
+
+
+<div class='section'>
+<h1>more on columns</h1>
+<h3>for example relations!</h3>
+<pre>
+<span class="line">SELECT has_table('cats');</span>
+<span class="line">SELECT has_pk('cats');</span>
+<span class="line">SELECT has_column('cats', 'id');</span>
+<span class="line">SELECT col_is_pk('cats', 'id');</span>
+<span class="line"></span>
+<span class="line">SELECT has_table('traits');</span>
+<span class="line">SELECT has_fk('traits');</span>
+<span class="line">SELECT has_column('traits', 'catid');</span>
+<span class="line">SELECT col_is_fk('traits', 'catid');</span>
+<span class="line">SELECT fk_ok('traits', 'catid', 'cats', 'id');</span>
+</pre>
+</div>
+<h3>fk_ok in particular makes sure of both sides of the relation</h3>
+
+<div class='section'>
+<h1>testing even more interesting things</h1>
+<h3>like... triggers!</h3>
+<pre>
+<span class="line">SELECT has_function('my_timestamp');</span>
+<span class="line">SELECT function_lang_is('my_timestamp', 'plpgsql');</span>
+<span class="line">SELECT function_returns('my_timestamp', 'trigger');</span>
+<span class="line">SELECT trigger_is('traits', 'updated', 'my_timestamp');</span>
+</pre>
+<h3>testing language, returns, existence and so on</h3>
+</div>
+
+<div class='section'>
+<h1>...or you have lots of functions?</h1>
+<h3>testing stored procedures</h3>
+<pre>
+<span class="line">SELECT has_function('nicer_age');</span>
+<span class="line">SELECT matches(nicer_age(cats.birthday), 'months') </span>
+<span class="line">    FROM cats WHERE name = 'Kitty';</span>
+<span class="line">SELECT isa_ok(nicer_age('2014-10-09'), 'text', </span>
+<span class="line">   'Function nicer_age returns text.');</span>
+<span class="line">SELECT function_returns('nicer_age', 'text');</span>
+</pre>
+<h3>testing language, returns, type, existence and so on</h3>
+</div>
+
+<div class='section'>
+<h1>show me queries!</h1>
+<h3>testing if something WORKS ok</h3>
+<pre>
+<span class="line">SELECT lives_ok(</span>
+<span class="line">  'INSERT INTO</span>
+<span class="line">    cats (name, breed, origin)</span>
+<span class="line">  VALUES</span>
+<span class="line">    ($$Hissy$$, $$Siamese$$, $$TH$$);',</span>
+<span class="line">  'inserting a new cat should be ok'</span>
+<span class="line">);</span>
+</pre>
+<h3>exspecting this test to succeed</h3>
+</div>
+
+<div class='section'>
+<h1>more queries</h1>
+<h3>testing if something FAILS ok</h3>
+<pre>
+<span class="line">SELECT throws_ok(</span>
+<span class="line">  'INSERT INTO</span>
+<span class="line">    cats (name, breed, origin)</span>
+<span class="line">  VALUES</span>
+<span class="line">    ($$MaoMao$$, $$Ordinary Housecat$$, $$Germany$$);',</span>
+<span class="line">  'new row for relation "cats" violates check constraint "cats_origin_check"',</span>
+<span class="line">  'inserting origin as country name should violate a check constraint'</span>
+<span class="line">);</span>
+</pre>
+<h3>failure is success! ;)</h3>
+</div>
+
+<div class='section'>
+<h1>even more queries</h1>
+<h3>testing if you actually get what you want</h3>
+<pre>
+<span class="line">PREPARE basic_select AS</span>
+<span class="line">  SELECT name, breed, origin</span>
+<span class="line">  FROM cats</span>
+<span class="line">  WHERE breed = 'Burmese';</span>
+<span class="line"></span>
+<span class="line">SELECT results_eq (</span>
+<span class="line">  'basic_select',</span>
+<span class="line">  $$VALUES('Kitty'::text, 'Burmese'::text, 'TH'::text)$$,</span>
+<span class="line">  'should select all cats of Burmese breed'</span>
+<span class="line">);</span>
+</pre>
+<h3>exact test: order, duplicates, result</h3>
+</div>
+
+<div class='section'>
+<h1>some specialities on SELECTs</h1>
+<h3>not caring for order and duplicates</h3>
+<span class="thingie">set_eq()</span>
+<span class="thingie">bag_eq()</span>
+<p>allowing for either "duplicates are ok" and/or "duplicates ok, order doesn't matter"</p>
+<span class="thingie">set_has()</span>
+<p>allows "yeah, ok I have that record(s) somewhere in the set"</p>
+<br/>
+<h3>stuff SHOULDN'T be there</h3>
+<span class="thingie">is_empty()</span>
+</div>
+
+<div class='section'>
+<h1>owners, grants, permissions</h1>
+<h3>yes, of course tests for this, too</h3>
+<span class="thingie">db_owner_is ()</span>
+<span class="thingie">schema_owner_is ()</span>
+<span class="thingie">tablespace_owner_is ()</span>
+<span class="thingie">relation_owner_is ()</span>
+<span class="thingie">table_owner_is ()</span>
+<span class="thingie">view_owner_is ()</span>
+<span class="thingie">sequence_owner_is ()</span>
+<span class="thingie">composite_owner_is ()</span>
+<span class="thingie">foreign_table_owner_is ()</span>
+<span class="thingie">index_owner_is ()</span>
+<span class="thingie">function_owner_is ()</span>
+<span class="thingie">language_owner_is ()</span>
+<span class="thingie">opclass_owner_is ()</span>
+<span class="thingie">type_owner_is ()</span>
+<span class="thingie">database_privs_are()</span>
+<span class="thingie">tablespace_privs_are()</span>
+<span class="thingie">schema_privs_are()</span>
+<span class="thingie">table_privs_are()</span>
+<span class="thingie">sequence_privs_are()</span>
+<span class="thingie">any_column_privs_are()</span>
+<span class="thingie">column_privs_are()</span>
+<span class="thingie">function_privs_are()</span>
+<span class="thingie">language_privs_are()</span>
+<span class="thingie">fdw_privs_are()</span>
+<span class="thingie">server_privs_are()</span>
+</div>
+
+<div class='section'>
+<h1>...and some helpers, too</h1>
+<h3>all kinds of stuff which might be useful</h3>
+<span class="thingie">diag()</span>
+<span class="thingie">skip()</span>
+<span class="thingie">todo()</span>
+<span class="thingie">todo_start( why )</span>
+<span class="thingie">todo_start( )</span>
+<span class="thingie">todo_end()</span>
+<span class="thingie">in_todo()</span>
+<span class="thingie">pgtap_version()</span>
+<span class="thingie">pg_version()</span>
+<span class="thingie">pg_version_num()</span>
+<span class="thingie">os_name()</span>
+<span class="thingie">collect_tap()</span>
+<span class="thingie">display_oper()</span>
+<span class="thingie">pg_typeof()</span>
+<span class="thingie">findfuncs()</span>
+</div>
+
+<div class='section'>
+<h1>and, of course</h1>
+<h3>you can write your own new test functions!</h1>
 </div>
 
 <div class='section'>
 <h1>Thank You Very Much!</h1>
-<h3>and that's how catpics are REALLY made</h3>
+<h3>and that's why you need a database for your catpics!</h3>
 <img src="cat-surrounded-by-paparazzi.jpeg"/>
 </br>
 </br>
