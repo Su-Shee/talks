@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title Sinatra Example
+    link rel="stylesheet" type="text/css" href="/sinatraexample.css"
+  body
+    h1 oh look! so many kittehz!
+    div
+      a href="/" give me a kitteh with my name!
+    div
+    div
+    - unless allcats.empty?
+      - for cat in allcats do
+        div
+          img src="/catpics/#{cat}"
+    - else
+      h3 no kittehz to show!
+    div

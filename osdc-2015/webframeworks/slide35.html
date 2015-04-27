@@ -1,0 +1,24 @@
+
+<html>
+<head>
+  <title>Web Frameworks Talk (OSDC Oslo 2015)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>looks like this:</h1>
+<pre>
+<span class="line">sub allowed_methods { [qw[ GET POST ]] }</span>
+<span class="line">sub content_types_provided { [{ 'text/css' => 'to_css'},</span>
+<span class="line">                           {'text/html' => 'to_html' }] }</span>
+</pre>
+<h3>and you take care of the details</h3>
+<pre>
+<span class="line">sub process_post { ... }</span>
+<span class="line">sub to_html { ... }</span>
+<span class="line">sub to_css { ... }</span>
+</pre>
+<span id="nav"><a href="slide36.html">next</a></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dancer Example</title>
+  <link rel="stylesheet" type="text/css" href="/dancerexample.css">
+</head>
+<body>
+  <h1>well, [% username %] that's a bit short...</h3>
+  <h3>... so no kitty for you!</h3>
+  <div>
+    <a href="/">try again!</a>
+  </div>
+</body>
+</html>

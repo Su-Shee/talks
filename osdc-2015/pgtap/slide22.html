@@ -1,0 +1,31 @@
+
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (OSDC Oslo 2015)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>more on columns</h1>
+<h3>for example relations!</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(10);</span>
+<span class="line">SELECT has_table('cats');</span>
+<span class="line">SELECT has_pk('cats');</span>
+<span class="line">SELECT has_column('cats', 'id');</span>
+<span class="line">SELECT col_is_pk('cats', 'id');</span>
+<span class="line"></span>
+<span class="line">SELECT has_table('traits');</span>
+<span class="line">SELECT has_fk('traits');</span>
+<span class="line">SELECT has_column('traits', 'catid');</span>
+<span class="line">SELECT col_is_fk('traits', 'catid');</span>
+<span class="line">SELECT fk_ok('traits', 'catid', 'cats', 'id');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>fk_ok in particular makes sure of both sides of the relation</h3>
+<span id="nav"><a href="slide23.html">next</a></span>
+</div>
+</body>
+</html>

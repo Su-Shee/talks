@@ -1,0 +1,31 @@
+
+<html>
+<head>
+  <title>Web Frameworks Talk (OSDC Oslo 2015)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>looks like this</h1>
+<h3>server part</h3>
+<pre>
+<span class="line">shinyServer ( function (input, output) {</span>
+<span class="line"> output$caption <- renderText( {</span>
+<span class="line">    paste("here ", input$username, " have your kitteh!")</span>
+<span class="line">  } )</span>
+<span class="line">})</span>
+</pre>
+<h3>ui part</h3>
+<pre>
+<span class="line">shinyUI( pageWithSidebar(</span>
+<span class="line">  mainPanel(</span>
+<span class="line">    h3( textOutput("caption") ),</span>
+<span class="line">    imageOutput("catpic")</span>
+<span class="line">  )</span>
+<span class="line">))</span>
+</pre>
+<h3>yes, that is the entire application!!</h3>
+<span id="nav"><a href="slide48.html">next</a></span>
+</div>
+</body>
+</html>

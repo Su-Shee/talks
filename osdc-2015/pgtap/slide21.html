@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (OSDC Oslo 2015)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>if we have everything, let's move on</h1>
+<h3>...and test some columns</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(6);</span>
+<span class="line">SELECT has_column('cats', 'birthday');</span>
+<span class="line">SELECT col_not_null('cats', 'birthday');</span>
+<span class="line">SELECT col_has_default('cats', 'birthday');</span>
+<span class="line">SELECT col_default_is('cats', 'birthday', 'now()');</span>
+<span class="line">SELECT col_type_is('cats', 'birthday', 'date');</span>
+<span class="line"></span>
+<span class="line">SELECT col_has_check('cats', 'origin');</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>it's about types, checks, constraints, null and defaults</h3>
+<span id="nav"><a href="slide22.html">next</a></span>
+</div>
+</body>
+</html>

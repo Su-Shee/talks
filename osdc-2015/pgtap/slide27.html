@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (OSDC Oslo 2015)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>even more queries</h1>
+<h3>testing if you actually get what you want</h3>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(1);</span>
+<span class="line">PREPARE basic_select AS</span>
+<span class="line">  SELECT name, breed, origin</span>
+<span class="line">  FROM cats</span>
+<span class="line">  WHERE breed = 'Burmese';</span>
+<span class="line"></span>
+<span class="line">SELECT results_eq (</span>
+<span class="line">  'basic_select',</span>
+<span class="line">  $$VALUES('Kitty'::text, 'Burmese'::text, 'TH'::text)$$,</span>
+<span class="line">  'should select all cats of Burmese breed'</span>
+<span class="line">);</span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<h3>exact test: order, duplicates, result</h3>
+<span id="nav"><a href="slide28.html">next</a></span>
+</div>
+</body>
+</html>
+

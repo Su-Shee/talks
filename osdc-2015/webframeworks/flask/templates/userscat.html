@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Flask Example</title>
+  <link rel="stylesheet" type="text/css"
+   href="{{ url_for('static', filename='flaskexample.css') }}">
+</head>
+<body>
+  <h1>here, {{ username }} have your kitteh!</h1>
+  <div>
+    <img src="{{ url_for('static', filename='catpics/' + catpic) }}"/>
+  </div>
+  <div>
+    <a href="{{ url_for('index') }}">gimme new, I hate my kitteh!</a>
+  </div>
+</body>
+</html>
