@@ -3,7 +3,9 @@
 use strict;
 use warnings;
 
-use ZMQ::LibZMQ3;
+use feature 'say';
+
+use ZMQ::LibZMQ4;
 use ZMQ::Constants qw/:all/;
 
 my $ctxt   = zmq_init;
@@ -14,9 +16,10 @@ zmq_setsockopt( $socket, ZMQ_SUBSCRIBE, '' );
 
 my $msg = zmq_msg_init();
 
-  print "receiving...\n";
-  my $ret = zmq_msg_recv( $msg, $socket );
-  print $ret;
-  print $msg;
-  print "got it!\n";
+say "receiving...";
+
+say zmq_msg_recv( $msg, $socket );
+say zmq_msg_data( $msg );
+
+say "got it!";
 
