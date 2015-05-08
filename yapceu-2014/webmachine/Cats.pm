@@ -26,7 +26,7 @@ sub content_types_provided { [
                              ]}
 
 sub to_css {
-  my $css = CSS::einy->new;
+  my $css = CSS::Tiny->new;
   $css->read('machineexample.css');
   return $css->write_string;
 }
