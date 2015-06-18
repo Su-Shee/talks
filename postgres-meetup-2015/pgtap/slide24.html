@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (Postgres Meetup Berlin)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>testing stored procedures</h1>
+<h2>testing languages, types, returns, matches...</h2>
+<pre>
+<span class="line">...</span>
+<span class="line"></span>
+<span class="line">SELECT has_function('nicer_age');</span>
+<span class="line"></span>
+<span class="line">SELECT matches(nicer_age(cats.birthday), 'months') </span>
+<span class="line">   FROM  cats</span>
+<span class="line">   WHERE name = 'Kitty';</span>
+<span class="line"></span>
+<span class="line">SELECT isa_ok(nicer_age('2014-10-09'), 'text', </span>
+<span class="line">   'Function nicer_age returns text.');</span>
+<span class="line"></span>
+<span class="line">SELECT function_returns('nicer_age', 'text');</span>
+<span class="line"></span>
+<span class="line">...</span>
+</pre>
+<span id="nav"><a href="slide25.html">next</a></span>
+</div>
+</body>
+</html>
