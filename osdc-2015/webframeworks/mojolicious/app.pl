@@ -17,7 +17,7 @@ post '/cats' => sub {
   my $c = shift;
   if ( $c->param('username') ) {
     my $user = $c->param('username');
-    $c->redirect_to('/cats/'. $user);
+    $c->redirect_to('cats/'. $user);
   } else {
     $c->render('allcats', allcats => \@catpics);
   }

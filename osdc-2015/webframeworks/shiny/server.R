@@ -7,10 +7,10 @@ shinyServer ( function (input, output) {
   output$catpic <- renderImage({
 
   catpic <- switch( input$kitty,
-       "cute"      = "./catpics/fritz-sit.jpg",
-       "cuter"     = "./catpics/fritz.jpg",
-       "cutest"    = "./catpics/fritz.jpg",
-       "cutestest" = "./catpics/fritz.jpg"
+       "cute"      = "./catpics/lazy-kitty.jpg",
+       "cuter"     = "./catpics/greyfluffball.jpg",
+       "cutest"    = "./catpics/piglet.jpg",
+       "cutestest" = "./catpics/guineapigandcat.jpg"
        )
 
     list(src = catpic,

@@ -13,7 +13,7 @@
   <div>
   % if ($allcats) {
   %  for my $cat ( @{ $allcats } ) {
-        <div><img src="<%= url_for('/catpics/' . $cat) %>"></div>
+        <div><img src="<%= url_for('catpics/' . $cat) %>"></div>
   %   }
   % }
   % else {
