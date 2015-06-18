@@ -1,0 +1,60 @@
+/* my pixel size / browser default pixel = em */
+/* 24px / 16px = 1.5em */
+
+body {
+  font-size: normal 1em sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background: #7f7f5f;
+  color: #ffffff;
+}
+
+a {
+  outline: 0;
+  font-size: 1.500em;
+  font-weight: 500;
+  color: #d7c9a9;
+  text-decoration: none;
+  display: block;
+  margin: 1.000em 0 1.500em 0;
+}
+
+h1 {
+  font-size: 2.000em;
+  font-weight: 600;
+  margin: 2.000em 0 1.500em 0;
+}
+
+h3 {
+  font-size: 1.500em;
+  font-weight: 600;
+  margin: 0 0 1.500em 0;
+}
+
+input[type="text"] {
+  width: 10.000em;
+  height: 1.500em;
+  font: 1.500em sans-serif bold;
+  outline: 0;
+  border: 0;
+  border-bottom: 0.150em solid black;
+  margin: 1.000em 0 1.000em 0;
+  background-color: #7f7f5f !important;
+}
+
+button {
+  font: 1.500em sans-serif;
+  background-color: #fa3496;
+  font-weight: 400;
+  text-align: left;
+  outline: 0;
+  border: 0.050em solid #707054;
+  padding: 0.500em 0.650em 0.500em 0.650em;
+  margin: 1.500em 0 1.500em 0;
+}
+
+button:hover {
+  border: 0.050em solid #5b5b44;
+}
+

@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>PgTAP Database Unit Testing (Postgres Meetup Berlin)</title>
+  <link rel="stylesheet" type="text/css" href="talk.css"/>
+</head>
+<body>
+<div class='section'>
+<h1>comparison</h1>
+<h2>basic testing functions - great for configs!</h2>
+<pre>
+<span class="line">BEGIN;</span>
+<span class="line">SELECT plan(1);</span>
+<span class="line"></span>
+<span class="line">SELECT is(pg_settings.setting, '100')</span>
+<span class="line">   FROM  pg_settings</span>
+<span class="line">   WHERE name = 'max_connections';</span>
+<span class="line"></span>
+<span class="line">SELECT * FROM finish();</span>
+<span class="line">ROLLBACK;</span>
+</pre>
+<span id="nav"><a href="slide20.html">next</a></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mojolicious Example</title>
+  <link rel="stylesheet" type="text/css" href="/mojoexample.css">
+</head>
+<body>
+  <h1>well, <%= $username %> that's a bit short...</h3>
+  <h3>... so no kitty for you!</h3>
+  <div>
+    %= link_to 'try again!', '/'
+  </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* my pixel size / browser default pixel = em */
+/* 24px / 16px = 1.5em */
+html {
+	height:100%;
+  margin:0;
+  padding:0;
+}
+
+body {
+  height:100%;
+  padding: 0;
+  margin: 0;
+  background: #000000;
+  color: #ffffff;
+  font: normal 1.300em sans-serif;
+}
+
+div {
+ position:absolute;
+ top:0;
+ bottom:0;
+ left:0;
+ right:0;
+ overflow:hidden;
+ margin: 0em 3em 0em 2em;
+ padding: 0em 1.5em 0em 1.5em;
+}
+
+p {
+  margin: 10px 40px 20px 0px;
+  /*border-left: 10px solid #22aa33;*/
+  /*padding-left: 10px;*/
+  font: normal 1.300em sans-serif;
+}
+
+.thingie {
+  line-height: 1.5em;
+  background-color: #006622;
+  color: #ffffff;
+  padding: 0.2em;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+a {
+  border-bottom: 5px solid #000077;
+  color: #ffffff;
+  line-height: 1.3em;
+  padding: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#nav {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  margin-bottom: 30px;
+}
+
+pre {
+  counter-reset: linecounter;
+  font: 1.4em 'Courier New', Courier, Fixed, monospace;
+  line-height: 1.5em;
+  background-color: #003300;
+  padding: 0.2em;
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+pre span.line {
+  counter-increment: linecounter;
+  color: #ffffff;
+}
+
+pre span.line:before {
+  content: counter(linecounter);
+  width: 1.2em;
+  margin-right: 10px;
+  display: inline-block;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+img {
+  max-width: 800px;
+  height: auto;
+  display: block;
+}
